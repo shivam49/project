@@ -1,0 +1,25 @@
+.addmusicbtn{
+    /*margin-top: -45px;*/
+    /*margin-left: -50px;*/
+}
+
+.titleManageMusic{
+    /*margin-top: -55px;*/
+    /*margin-left: -50px;*/
+}
+
+.fontcolor{
+    color: black;
+}
+
+table{
+    width: 100%;
+}
+
+.mouseDown{
+    cursor: url(../images/img/rsz_cursor_drag_hand_icon.png), pointer;
+}
+
+.mouseClick{
+    cursor: pointer;
+}

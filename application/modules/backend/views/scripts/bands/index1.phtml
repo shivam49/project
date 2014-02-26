@@ -1,0 +1,162 @@
+<div class="span2">
+    
+</div>
+<div class="span8">
+    <div class="container-fluid">
+        <span>SORT BY:   </span>
+        <button class="btn btn-inverse" id="sort_by_most_vote" data-sort="">MOST VOTE <i class=""></i></button>
+        <button class="btn btn-inverse" id="sort_by_most_fans" data-sort="">MOST FANS <i class=""></i></button>
+        <button class="btn btn-inverse" id="sort_by_top_songs" data-sort="">TOP SONGS <i class=""></i></button>
+        <div class="btn-group">
+            <button class="btn" onclick="featuredFunc()" data-sort="Yes" id="sort_by_top_featured_yes"><i class="icon-star"></i> FEATURED</button>
+            <button class="btn" onclick="getBands()" data-sort="" id="sort_by_top_featured_all">ALL</button>
+            <button class="btn" onclick="featuredFuncNo()" data-sort="No" id="sort_by_top_featured_no">UN FEATURED <i class="icon-star-empty"></i></button>
+        </div>
+        <a  id="search-data-btn" href="#myModal" role="button" class="btn btn-inverse pull-right" data-toggle="modal">SEARCH</a>
+        
+        <button class="btn btn-primary pull-right" id="reset_search_data" data-search="" style="display: none">RESET SEARCH</button>
+ 
+        <!-- Modal -->
+        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h5 id="myModalLabel">Search Band Name</h5>
+            </div>
+            <div class="modal-body">
+                <form id="form-send-data" action="<?php echo APPLICATION_BASEURL; ?>/backend/bands">
+                    <input type="text" name="search-data" id="search-data" placeholder="Band Name..."  style="width: 70%">
+                    <input type="button" value="search" name="search-band-name" id="search-band-name" class="btn btn-success" style="margin-top:-10px; width: 25%" />
+                </form>
+            </div>
+        </div>
+        </div>
+        
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                </tr>
+            </thead>
+            <tbody id ="tBody_table_td"></tbody>
+        </table>
+         <div class="row">
+         <div  style="margin: auto;text-align: center">
+             <div class="pagination">
+                <ul id="ul-pagination-id">
+                </ul>
+            </div>
+         </div>
+     </div>
+</div>
+<div class="span2">
+    
+</div>
+
+<div id="infoBand" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h3 id="infoBandLabel">Modal header</h3>
+</div>
+<div class="modal-body">
+<p>One fine body…</p>
+</div>
+<div class="modal-footer">
+<!--<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+<button class="btn btn-primary">Save changes</button>-->
+</div>
+</div>
+
+
+<div id="editBand" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-body">
+        <div class="span6" id="alert-login-faild"></div>
+        <ul class="nav nav-tabs" id="editBandTab">
+            <li class="active"><a href="#basicInfo">Basic Info</a></li>
+            <li><a href="#othreInfo">Other Info</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="basicInfo">
+                <form id="form-band-edit-id" action="<?php echo APPLICATION_BASEURL; ?>/backend/bands" style="margin:0;"  >
+                        <div class="span3">
+                            <label>Title</label>
+                            <input type="text" id="pre_vTitle" data-tab1="data" name="vTitle" placeholder="Title..." style="width:93%;" >
+                            <label>City</label>
+                            <input type="text" id="pre_vCity" data-tab1="data" name="vCity" placeholder="City..." style="width:93%;" >
+                            <label>State</label>
+                            <select id="pre_iState_id" data-tab1="data" name="iState_id" style="width:96%;">
+                                <?php  
+                                    foreach ($this->viewArray['formInfo']['stateList'] as $key => $value) {
+                                        print '<option value="'.$value['iId'].'">'.$value['vName'].'</option>';
+                                    } 
+                                ?>
+                            </select>
+                            <input class="btn" value="Close" data-close="close" id="more-info-form-close" style="text-align: center;cursor: pointer;"/>
+                        </div>
+                        <div class="span3">
+                            <label>Email</label>
+                            <input type="text" id="pre_vEmail" data-tab1="data" name="vEmail" placeholder="Email..." style="width:93%;" >
+                            <label>Market:</label>
+                            <select id="pre_iMarket_id" data-tab1="data" name="iMarket_id" style="width:96%;">
+                                <?php  
+                                    foreach ($this->viewArray['formInfo']['marketList'] as $key => $value) {
+                                        print '<option value="'.$value['iId'].'">'.$value['vTitle'].'</option>';
+                                    }                                                             
+                                ?>
+                            </select>
+                            <label>Genres:</label>
+
+                                <select id="pre_vGenre_ids" data-tab1="data" name="vGenre_ids" class="select2" multiple="multiple" style="width:96%; height: 160px">
+                                    <?php  
+                                        foreach ($this->viewArray['formInfo']['genresList'] as $key => $value) {
+                                            print '<option value="'.$value['iId'].'">'.$value['vTitle'].'</option>';
+                                        }                                                             
+                                    ?>
+                                </select>
+                            <input class="btn btn-success" value="Save Information" id="more-info-form-save" style="text-align: center;cursor: pointer;margin-top: 10px"/>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-pane" id="othreInfo">
+                <form id="form-band-edit-id-tab2" action="<?php echo APPLICATION_BASEURL; ?>/backend/bands" style="margin:0;"  >
+                    <div class="span3">
+                        <label>website</label>
+                        <input type="text" id="pre_vWebsite" data-tab2="data" name="vWebsite" placeholder="Website..." style="width:93%;" >
+                        <label>Facebook</label>
+                        <input type="text" id="pre_vFacebook" data-tab2="data" name="vFacebook" placeholder="Facebook..." style="width:93%;" >
+                        <label>Twitter</label>
+                        <input type="text" id="pre_vTwitter" data-tab2="data" name="vTwitter" placeholder="Twitter..." style="width:93%;" >
+
+                        <input class="btn" data-close="close" value="Close" id="more-info-form-close-tab2" style="text-align: center;cursor: pointer;"/>
+                    </div>
+                    <div class="span3">
+                        <label>Instagram</label>
+                        <input type="text" id="pre_vInstagram" data-tab2="data" name="vInstagram" placeholder="Instagram..." style="width:93%;" >
+                        <label>Spotify</label>
+                        <input type="text" id="pre_vSpotify" data-tab2="data" name="vSpotify" placeholder="Spotify..." style="width:93%;" >
+                        <label>Soundcloud</label>
+                        <input type="text" id="pre_vSoundcloud" data-tab2="data" name="vSoundcloud" placeholder="Soundcloud..." style="width:93%;" >
+                        
+                        <input type="hidden" name="iMember_id" id="pre_iMember_id">
+                        <input  type="hidden" name="iId" id="pre_iId">
+                        <input class="btn btn-success" value="Save Information" id="more-info-form-save-tab2" style="text-align: center;cursor: pointer;"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="deleteBand" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="deleteBandLabel">Warning</h3>
+    </div>
+    <div class="modal-body">
+    <p>Are you sure to delete this band?</p>
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">No</button>
+    <button class="btn btn-primary" id="delete-band-yes">Yes</button>
+    </div>
+</div>

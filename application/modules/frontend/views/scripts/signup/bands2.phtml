@@ -1,0 +1,97 @@
+<div class="span1">
+    
+</div>
+<div class="span10 page-back-all">
+    <div class="container-fluid">
+        <!--<div class="span1 offset1"></div>-->
+        <div class="span12">
+                        <?php
+                        if($this->view->form){
+                            fb($this->view->form->getMessages());
+                        }
+                        
+                    if ( $this->errorMessage ) {
+                    ?>
+                        <div class="alert alert-error">
+                            <?php print $this->errorMessage; ?>
+                        </div>
+
+                    <?php }if ( $this->SuccessMessage ) { ?>
+                        <script>
+                            $("#alert-signup").remove();
+                        </script>
+                        
+                        <div class="alert alert-success">
+                            <?php print $this->SuccessMessage; ?>
+                            <script>
+                                var $projectExecPath = '<?php echo APPLICATION_BASEURL.'/wellcome'; ?>';
+                                var delay = 2000; //Your delay in milliseconds
+
+                                setTimeout(function(){ window.location = $projectExecPath; }, delay);
+                            </script>
+                        </div>
+                     <?php
+                    }
+                    ?>
+        <div  id="alert-signup" ></div>
+        </div>
+        <!--<div class="span1 offset1"></div>-->
+    </div>
+    <div class="container-fluid">
+        <div class="span1">
+            
+        </div>
+        <div class="span10 back-all-form">
+            <div class="span12 back-all-title-form">Register Bands Form</div>
+            <div class="span2">
+                
+            </div>
+            <div class="span8">
+                
+                <div class="page-header">
+                    <h5>Create your account with facebook account</h5>
+                </div>
+                    <div  style="text-align: center"><a href="<?php echo APPLICATION_BASEURL; ?>/signup"  id="fbloginlink" ><img src="https://s3-us-west-1.amazonaws.com/fivefourclubimages/frontend/fb-login.jpg"></a></div>
+                
+                <div  class="page-header">
+                    <h5>Create your account</h5>
+                </div>
+                
+                <?php print $this->form; ?>
+            </div>
+            <div class="span2">
+                
+            </div>
+            <div class="container-fluid form-rol-status"  id="form-rol-register"> 
+                <div class="span12 back-all-roll-form">
+                    In order to proceed, you must agree with the following rules:
+                    <div class="container-fluid"> 
+                        <!--<div class="span12 back-all-roll-form">-->
+                            <pre>
+Forum Rules
+
+Registration to this forum is free! We do insist that you abide by the rules and policies detailed below. If you agree to the terms, please check the 'I agree' checkbox and press the 'Complete Registration' button below. If you would like to cancel the registration, click here to return to the forums index.
+
+Although the administrators and moderators of Sencha Forum will attempt to keep all objectionable messages off this site, it is impossible for us to review all messages. All messages express the views of the author, and neither the owners of Sencha Forum, nor vBulletin Solutions, Inc. (developers of vBulletin) will be held responsible for the content of any message.
+
+By agreeing to these rules, you warrant that you will not post any messages that are obscene, vulgar, sexually-oriented, hateful, threatening, or otherwise violative of any laws.
+
+The owners of Sencha Forum reserve the right to remove, edit, move or close any content item for any reason. The Sencha Forum is subject to Sencha Terms of Use.
+
+                            </pre>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="vRef" id="vRef" value="1">&nbspI have read, and agree to abide by the Sencha Forum rules. <br>
+                        <input type="hidden" name="facebookid" id="facebookid" value="">
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div class="span1">
+            
+        </div>
+    </div>
+    
+</div>
+
+

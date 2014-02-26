@@ -1,0 +1,38 @@
+/*body{
+    padding: 10px;
+    
+}
+ul{
+    padding-right: 0px
+}
+
+li{
+    color: red;
+    display:block;
+    padding-top: 5px;
+}
+
+
+
+form fieldset#fieldset-left, form fieldset#fieldset-right
+{
+    float: right;
+    width: 15%;
+    border: none;
+}
+ 
+form #fieldset-bottom
+{
+    clear: both;
+    border: none;
+}
+ 
+form dd
+{
+    margin: 0;
+}
+ 
+form fieldset .hint
+{
+    font-weight: bold;
+}*/

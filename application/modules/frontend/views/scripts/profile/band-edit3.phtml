@@ -1,0 +1,179 @@
+    
+<div class="span1">
+    
+</div>
+<div class="span10 page-back-all">
+<!--    <div class="page-header">
+     Profile View Test
+    </div>-->
+    <div class="tabbable tabs-left" id="tabTest">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#lA" id="tab_lA">User Information</a></li>
+            <li class=""><a data-toggle="tab" href="#lB" id="tab_lB">Change Password</a></li>
+            <!--<li class=""><a data-toggle="tab" href="#lC" id="tab_lC">About</a></li>-->
+        </ul>
+        <div class="tab-content">
+            <div id="lA" class="tab-pane active">
+                <!--<div class="container-fluid"> <img src="<?php echo APPLICATION_BASEURL.'/public/uploaded_resource/frontend/defaultimage_yellowgreen_940x180.png' ?>"/></div>-->
+                <div class="container-fluid">
+                    <div class="accordion" id="accordion2">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" style="background-color: #ededed" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                    Basic Information
+                                </a>
+                            </div>
+                            <div id="collapseOne" class="accordion-body collapse in">
+                                <div class="accordion-inner">
+                                    <div class="span12">
+                                        <div id="alert-login-faild"></div>
+                                    </div>
+                                    <div  id="item-show">
+                                        <div class="span3">
+                                            <div class="container-fluid">
+                                                <img class="img-circle" width="125px" id="image-band"  />
+                                            </div>
+                                        </div>
+                                        <div class="span9">
+                                            <div class="row-fluid"><div class="span2"> Title : </div><div  class="span10" id="profile_vTitle">-</div></div>
+                                            <div class="row-fluid"><div class="span2"> Email : </div><div  class="span9" id="profile_vEmail">-</div></div>
+                                            <div class="row-fluid"><div class="span2"> Website : </div><div  class="span9"><a href="" id="profile_vWebsite_link"><div  id="profile_vWebsite">-</div></a></div></div>
+
+                                        </div>
+                                        <div class="row-fluid"><button class="btn btn-primary pull-right" type="button" id="edit-info">Edit</button></div>
+                                    </div>
+                                    <div id="item-hide" style="width: 98%;height: auto;display: none">
+                                        <div class=" span12 page-back-all">
+                                            <div class="row-fluid">
+                                                <form id="basic-info-form" action="<?php echo APPLICATION_BASEURL; ?>/profile">
+                                                    <div class="container-fluid">
+                                                        <div class="span6">
+                                                            <label>Email</label>
+                                                            <input type="text" id="pre_vEmail" name="vEmail" placeholder="Email..." style="width:93%;" >
+                                                            <label>website</label>
+                                                            <input type="text" id="pre_vWebSite" name="vWebsite" placeholder="Website..." style="width:93%;" >
+                                                        </div>
+                                                        <div class="span6">
+                                                            <label>Title</label>
+                                                            <input type="text" id="pre_vTitle" name="vTitle" placeholder="Title..." style="width:93%;" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="container-fluid">
+                                                          <button class="btn btn-primary" type="button" id="back-info">Back</button>
+                                                          <button class="btn btn-primary pull-right" type="button" id="basic-info-form-save">Save Info</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group"  id="collapseTwo-toggel">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle"  style="background-color: #ededed" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                                    Other Information
+                                </a>
+                            </div>
+                            <div id="collapseTwo" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <div class="span12">
+                                        <div id="alert-login-faild2"></div>
+                                    </div>
+                                    <div  id="item-show1" >
+                                        <!--<div class="row-fluid"><div class="span6"><div class="span4"> Company : </div><div  class="span8" id="profile1_vCompany">-</div></div><div class="span6"><div class="span4">Birth date : </div><div  class="span8" id="profile1_dBirth_date">-</div></div></div>-->
+                                        <!--<div class="row-fluid"><div class="span6"><div class="span4"> Address : </div><div  class="span8" id="profile1_vAddress">-</div></div><div class="span6"><div class="span4"> Address2 : </div><div  class="span8" id="profile1_vAddress2">-</div></div></div>-->
+                                        <div class="row-fluid"><div class="span6"><div class="span4"> Country : </div><div  class="span8" id="profile1_vCountry">USA</div></div><div class="span6"><div class="span4"> Market : </div><div  class="span8" id="profile1_iMarket_id">-</div></div></div>
+                                        <div class="row-fluid"><div class="span6"><div class="span4"> State : </div><div  class="span8" id="profile1_iState_id">-</div></div><div class="span6"><div class="span4"> Genres : </div><div  class="span8" id="profile1_vGenre_ids">-</div></div></div>
+                                        <div class="row-fluid"><div class="span6"><div class="span4"> City : </div><div  class="span8" id="profile1_vCity">-</div></div></div>
+                
+                                        <div class="row-fluid"><button class="btn btn-primary pull-right" type="button" id="edit-info1">Edit</button></div>
+                                    </div>
+                                    <div id="item-hide1" style="width: 98%;height: auto;display: none">
+                                        <div class=" span12 page-back-all">
+                                            <div class="row-fluid">
+                                                <form id="more-info-form" action="<?php echo APPLICATION_BASEURL; ?>/profile">
+                                                    <div class="container-fluid">
+                                                        <div class="span6">
+
+                                                            <label>State</label>
+                                                            <select id="pre1_iState_id" name="iState_id" style="width:96%;">
+                                                                <?php  foreach ($this->state as $key => $value) {
+                                                                    print '<option value="'.$value['iId'].'">'.$value['vName'].'</option>';
+                                                                  }                                                             
+                                                                ?>
+                                                            </select>
+                                                            <!--<input type="text" id="pre1_iState_id" name="iState_id" placeholder="State..." style="width:93%;" >-->
+                                                            <label>City</label>
+                                                            <input type="text" id="pre1_vCity" name="vCity" placeholder="City..." style="width:93%;" >
+                                                            <label>Market:</label>
+                                                            <select id="pre1_iMarket_id" name="iMarket_id" style="width:96%;">
+                                                                <?php  foreach ($this->market as $key => $value) {
+                                                                    print '<option value="'.$value['iId'].'">'.$value['vTitle'].'</option>';
+                                                                  }                                                             
+                                                                ?>
+                                                            </select>
+
+                                                        </div>
+                                                        <div class="span6">
+                                                            
+                                                            
+                                                            <label>Genres:</label>
+                                                            <select id="pre1_vGenre_ids" name="vGenre_ids" style="width:96%; height: 160px" multiple="multiple">
+                                                                <?php  foreach ($this->genres as $key => $value) {
+                                                                    print '<option value="'.$value['iId'].'">'.$value['vTitle'].'</option>';
+                                                                  }                                                             
+                                                                ?>
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="container-fluid">
+                                                          <button class="btn btn-primary" type="button" id="back-info1">Back</button>
+                                                          <button class="btn btn-primary pull-right" type="button" id="more-info-form-save">Save Info</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="lB" class="tab-pane">
+                <div class="span12" id="alert-change-password"></div>
+                <div class="container-fluid">
+                    
+                    <div class="span12 back-all-title-form">Change Password</div>
+                    
+                    <!--<div class="span12">-->
+                        <div class="span2"> </div>
+                        <div class="span8">
+                            <form id="change-password-form" action="<?php echo APPLICATION_BASEURL; ?>/profile">
+                                <fieldset>
+                                    <div class="row-fluid">
+                                        <label>Current Password</label>
+                                        <input type="password" name="CuPassword" placeholder="Current Password..." style="width:95%;" >
+                                        <label>New Password</label>
+                                        <input type="password" name="vPassword" placeholder="New Password..." style="width:95%;" >
+                                        <label>Password Confirm</label>
+                                        <input type="password" name="vPasswordConfirm" placeholder="Password Confirm..." style="width:95%;">
+                                    </div>
+                                    <div class="row-fluid">
+                                        <div class="span3">
+                                            <input type="button" value="Change Password" name="change-password-form-save" id="change-password-form-save" class="btn btn-success" />
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    <!--</div>-->
+                </div>
+            </div>
+            <!--<div id="lC" class="tab-pane"><p>about user login.</p></div>-->
+        </div>
+    </div>
+</div>

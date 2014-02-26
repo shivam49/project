@@ -1,0 +1,223 @@
+<?php
+echo '<?xml version="1.0" encoding="UTF-8" ?>';
+echo $this->doctype();
+?>
+<html>
+    <head>
+        <script type="text/javascript">
+            var $projectExecPath = '<?php echo APPLICATION_BASEURL; ?>';
+            var $projectExecLibrary = '<?php echo APPLICATION_BASEURL; ?>/library';
+//            var $projectExecImage= '<?php echo APPLICATION_BASEURL; ?>/public/uploaded_resource/frontend/member/profile-image';
+            var $AppVarSID = '<?php echo $this->currentSessionId; ?>';
+            var $secureAppVarSID = '<?php echo $this->currentSessionIdSecurity; ?>';
+            var $panelId = '<?php echo $this->pannelProperties->iId; ?>';
+            var $userId = '<?php echo $this->loggedUser->iId; ?>';
+            var $album_id = '<?php echo $this->loggedUser->album_id; ?>';
+            var $projectExecPath = '<?php echo APPLICATION_BASEURL; ?>';
+            var $AppVarSID = '<?php echo $this->currentSessionId; ?>';
+            var $projectExecImage= '<?php echo APPLICATION_BASEURL; ?>/public/uploaded_resource/frontend/band/image';
+            var $secureAppVarSID = '<?php echo $this->currentSessionIdSecurity; ?>';
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Uproar: Battle of the Bands</title>
+        <!-- Google fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+        
+        <link rel="shortcut icon" href="<?php echo APPLICATION_BASEURL; ?>/public/skins/frontend/default/images/fav/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="<?php echo APPLICATION_BASEURL; ?>/public/skins/frontend/default/images/fav/favicon.ico" type="image/x-icon">
+        <?php
+        echo $this->headTitle();
+        $this->loadSkin($this->frontendSkin, $this->currentPageDetails['currentPageFilename']);
+        echo $this->headLink();
+        echo $this->headScript();
+        ?>
+        <style type="text/css">
+            #menu ul li {
+                padding: 10px 15px;
+            }
+          /* Fix for responsive body padding in bootstrap */
+            @media screen and (min-width: 320px) and (max-width: 700px) {
+                    body { padding: 0; }
+            }
+        </style>
+    </head>
+
+    <body style="background-color: black;">
+        <div class="full-bg"></div>
+        <!-- TOP NAVIGATION -->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="nav-collapse collapse" style="height: 0px; ">
+                    <div class="nav-box">
+                        <ul id="main-menu" class="nav">
+                            <li id="menu-item-2508" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2508"><a href="#REPLACE">NEWS</a></li>
+                            <li id="menu-item-2509" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2509"><a href="#REPLACE">TOUR DATES</a></li>
+                            <li id="menu-item-2510" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2510"><a href="#REPLACE">BANDS</a></li>
+                            <li id="menu-item-2646" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2646"><a href="#REPLACE">UPROAR TV</a></li>
+                            <li id="menu-item-2594" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2594"><a href="#REPLACE">Causes</a></li>
+                            <li id="menu-item-2596" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2596"><a href="#REPLACE">HISTORY</a></li>
+                        </ul>
+                    </div><!-- /.nav-box -->
+                    <ul class="nav-social mobile-social">
+                        <li><a href="#REPLACE" target="_blank"><i class="sge-icon-fb"></i></a></li>
+                        <li><a href="#REPLACE" target="_blank"><i class="sge-icon-tw"></i></a></li>
+                        <li><a href="#REPLACE" target="_blank"><i class="sge-icon-yt"></i></a></li>
+                        <li><a href="#REPLACE" target="_blank"><i class="sge-icon-ins"></i></a></li>
+                    </ul>
+                </div><!-- /.nav-collapse -->
+                <ul class="nav-social">
+                    <li><a href="#REPLACE" target="_blank"><i class="sge-icon-fb"></i></a></li>
+                    <li><a href="#REPLACE" target="_blank"><i class="sge-icon-tw"></i></a></li>
+                    <li><a href="#REPLACE" target="_blank"><i class="sge-icon-yt"></i></a></li>
+                    <li><a href="#REPLACE" target="_blank"><i class="sge-icon-ins"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <!-- /TOP NAVIGATION -->
+        
+        <!-- GRAPHIC HEADER -->
+        <div id="header-not-homepage">
+            
+            <div class="container">
+                
+                <div class="row">
+                    
+                    <div class="row">
+                        <div class="span12">
+                            <div class="row-fluid">	
+
+                                <div class="span8 logo">
+                                        <img src="<?php echo APPLICATION_BASEURL; ?>/library/home/assets/img/rockstar-uproar-festival-banner.png" alt="rockstar-uproar-festival-banner" width="702" height="149" />
+                                </div>
+                                <div class="span4 logo">
+                                        <img src="<?php echo APPLICATION_BASEURL; ?>/library/home/assets/img/logo-battle-of-the-bands.png" alt="logo-battle-of-the-bands" width="232" height="86" />
+                                </div>
+                            </div>
+
+                        </div><!-- /.row-fluid -->	
+                    </div><!-- /.span12 -->
+
+                </div><!-- /.row-->
+                
+            </div><!-- /.container-->
+            
+        </div>
+        <!-- /#header -->
+        <!-- /GRAPHIC HEADER -->
+        
+        <div id="menu">
+            
+            <div class="container">
+                
+                <div class="row-fluid">
+                    
+                    <div class="span12">
+                        
+                        <ul>
+                            <li><a href="<?php echo APPLICATION_BASEURL; ?>">HOME</a></li>
+                            <li>
+                                <a href="<?php if($this->loggedUser->eType == 'Band'){echo APPLICATION_BASEURL.'/profile/band/id/'.$this->loggedUser->iId;}elseif ($this->loggedUser->eType == 'Fan') {echo APPLICATION_BASEURL.'/profile/fan/id/'.$this->loggedUser->iId;} ?>">PROFILE</a>
+                            </li>
+                            <?php if($this->loggedUser->eType == 'Band'){  ?>
+                            <li><a href="<?php echo APPLICATION_BASEURL; ?>/audio">AUDIO</a></li>
+                            <li><a href="<?php echo APPLICATION_BASEURL; ?>/movies">MOVIES</a></li>
+                            <li><a href="<?php echo APPLICATION_BASEURL; ?>/browse">BROWSE</a></li>
+                            <li><a href="<?php echo APPLICATION_BASEURL; ?>/images">PHOTO</a></li>
+                           <!--  <li><a href="<?php echo APPLICATION_BASEURL; ?>/bands-member">BANDS MEMBER</a></li> -->
+                            <?php }else{ ?>
+                                <li><a href="<?php echo APPLICATION_BASEURL; ?>/browse">BROWSE</a></li>
+                            <?php } ?>
+                            <li><a href="#">INFO</a></li>
+                            <li><a href="#">BLOG</a></li>
+                            <li><a href="#">NEWS</a></li>
+                            <li><a href="#">HELP</a></li>
+                            <li><a href="<?php echo APPLICATION_BASEURL ?>/signout">SIGN OUT</a></li>
+                            
+                            
+                           
+                        </ul>
+                        
+                    </div><!-- /.span12 -->
+                    
+                </div><!-- /.row -->
+                
+            </div><!-- /.container -->
+            
+        </div><!-- /#menu -->
+        
+        
+        <?php print $this->layout()->content; ?>
+        
+        
+        
+        <div id="footerMenu">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Tour Dates</a></li>
+                            <li><a href="#">Bands</a></li>
+                            <li><a href="#">UPROAR TV</a></li>
+                            <li><a href="#">Causes</a></li>
+                            <li><a href="#">Sponsors</a></li>
+                            <li><a href="#">History</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+
+                    </div><!-- /.span -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /#footerMenu -->
+        
+        <div class="container">
+            <div class="footer-sponsors">
+                <div class="row sponsor-row">
+                <a class="span3" href="/sponsors/rockstar-energy-drink"><img src="http://cache.rockstaruproar.com/images/2013/sponsors/header/thumbs/rockstarenergydrink.png" alt="Rockstar Energy Drink"></a>
+                    <div class="span9">
+                        <a href="#"><img src="http://cache.rockstaruproar.com/images/2013/sponsors/header/thumbs/ernieball.png" alt="Ernie Ball"></a>
+                        <a href="#"><img src="http://cache.rockstaruproar.com/images/2013/sponsors/header/thumbs/schecter.png" alt="Schecter Guitar Research"></a>
+                        <a href="#"><img src="http://cache.rockstaruproar.com/images/2013/sponsors/header/thumbs/truth.png" alt="truth¬Æ Youth Smoking Prevention Campaign"></a>
+                        <a href="#"><img src="http://cache.rockstaruproar.com/images/2013/sponsors/header/thumbs/lunarpages.png" alt="Lunarpages"></a>
+                        <a href="#"><img src="http://cache.rockstaruproar.com/images/2013/sponsors/header/thumbs/airforcereserve.png" alt="Air Force Reserve"></a>
+                        <a href="#"><img src="http://cache.rockstaruproar.com/images/2013/sponsors/header/thumbs/matador.png" alt="Matador"></a>
+                        <a href="#"><img src="http://cache.rockstaruproar.com/images/2013/sponsors/header/thumbs/zippoencore.png" alt="Zippo Encore"></a>
+                        <a href="#"><img src="http://cache.rockstaruproar.com/images/2013/sponsors/header/thumbs/fuckcancer.png" alt="Fuck Cancer"></a>
+                        <a href="#"><img src="http://cache.rockstaruproar.com/images/2013/sponsors/header/thumbs/vevo.png" alt="VEVO"></a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.footer-sponsors -->
+        
+        <div id="subfooter">
+            <div class="container">
+                <div class="row">
+                    <div class="span12" style="text-align: center">
+                        <a href="#">Privacy Policy</a> | <a href="#">press@rockstaruproar.com</a> &copy;2013 Rockstar Energy Drink Uproar Festival<img src="<?php echo APPLICATION_BASEURL; ?>/library/home/assets/img/logoBadge-SGE-lunarpages.gif" alt="logoBadge-SGE-lunarpages" width="144" height="26" />
+                    </div><!-- /.span -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /#menu -->
+        
+        <div id="footer">
+            <div class="container">
+                <div class="row-fluid">
+                    <div class="span6"><a href="#">PRIVACY POLICY</a> <img class="separator" src="<?php echo APPLICATION_BASEURL; ?>/library/home/assets/img/vbar.gif" alt="vbar" width="2" height="33" /> &copy;2013 PROJECT-X</div>
+                    <div class="span6 contactLink"><a href="#">SUPPORT</a> <img class="separator" src="<?php echo APPLICATION_BASEURL; ?>/library/home/assets/img/vbar.gif" alt="vbar" width="2" height="33" /> <a href="#">CONTACT US</a>
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /#menu -->
+        </div>
+
+    </body

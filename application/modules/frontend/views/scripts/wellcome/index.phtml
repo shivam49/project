@@ -1,0 +1,24 @@
+<?php 
+if($this->loggedUser){
+if($this->loggedUser->eType== 'Band'){
+    $name = $this->loggedUser->listInfo['vTitle'];
+    $url = APPLICATION_BASEURL.'/profile/band/id/'.$this->loggedUser->iId;
+    
+}
+if($this->loggedUser->eType == 'Fan'){
+    $name = $this->loggedUser->listInfo['vName'].' '.$this->loggedUser->listInfo['vLastname']; 
+    $url = APPLICATION_BASEURL.'/profile/fan/id/'.$this->loggedUser->iId;
+    
+} ?>
+<div class="hero-unit">
+    <h3>Hello, <?php echo $name ?> </h3>
+    <p>Welcome... </p>
+    <p>
+        <a class="btn btn-primary" href="<?php echo $url; ?>">
+    Edit Profile
+    </a>
+    </p>
+    </div>
+
+<?php }?>
+ 

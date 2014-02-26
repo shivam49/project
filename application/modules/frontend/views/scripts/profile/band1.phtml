@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+            <form id="register_vote_id">
+                <button id="btn_add_vote_id" data-trigger="hover"  class="btn btn-primary" value="addVote"><span id="icon_vote_id" class="icon-thumbs-up icon-white"></span> VOTE</button>
+            </form>
+        </div>
+		<div data-idProfile="" id="<?php print $this->idProfile ?>"></div>
+        <div class="span5">
+            <div class="hidden" id="hidden_block_vote_id">
+                <div class="alert alert-block" id="alert_block_vote_id">
+                    <h4>Warning!</h4>
+                    Best check yo self, you're not...
+                </div>
+            </div>
+            <div class="hidden" id="hidden_success_vote_id">
+                <div class="alert alert-success" id="alert_success_vote_id">
+                    <h4>success!</h4>
+                    Best check yo self, you're not...
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="row-fluid">
+        <div class="span2">
+            <a class="btn btn-primary" href="<?php echo APPLICATION_BASEURL; ?>/profile/band-edit"> EDIT</a>
+        </div>
+    </div>
+</div>

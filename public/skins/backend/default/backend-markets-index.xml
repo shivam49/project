@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin>
+
+    <stylesheets>
+        <stylesheet>../../../../library/bootstrap/css/bootstrap.min.css</stylesheet>
+<!--         <stylesheet>../../../../library/Flat-UI-master/css/flat-ui.css</stylesheet>
+       <stylesheet>../../../../library/home/assets/css/house.css</stylesheet>-->
+        <stylesheet>../../../../library/bootstrap/css/bootstrap-responsive.min.css</stylesheet>
+<!--        <stylesheet>../../../../library/bootstrap/font-awesome/css/font-awesome.min.css</stylesheet>
+        <stylesheet>../../../../library/bootstrap/font-awesome/css/font-awesome-ie7.min.css</stylesheet>
+        <stylesheet>../../../../library/plugin/bootstrap-editable-1.4.4/inputs-ext/select2/select2.css</stylesheet>
+        <stylesheet>../../../../library/plugin/bootstrap-editable-1.4.4/inputs-ext/select2/select2-bootstrap.css</stylesheet>-->
+        <stylesheet>../../../../library/plugin/bootstrap-editable-1.4.4/bootstrap-editable/css/bootstrap-editable.css</stylesheet>
+<!--        <stylesheet>../../../../library/plugin/inserthtml.com.scroll-pagination/style.css</stylesheet>-->
+        <stylesheet>css/app.css</stylesheet>
+    </stylesheets>
+
+    <javascripts>
+        <javascript>../../../../library/jQuery/jquery-1.9.0.min.js</javascript>
+<!--        <javascript>../../../../library/home/assets/js/jquery.backstretch.min.js</javascript>-->
+        <javascript>../../../../library/bootstrap/js/bootstrap.min.js</javascript>
+<!--        <javascript>../../../../library/plugin/bootstrap-editable-1.4.4/inputs-ext/select2/select2.js</javascript>-->
+        <javascript>../../../../library/plugin/bootstrap-editable-1.4.4/bootstrap-editable/js/bootstrap-editable.js</javascript>
+        
+<!--        <javascript>../../../../library/plugin/inserthtml.com.scroll-pagination/javascript.js</javascript>
+        <javascript>../../../../library/plugin/inserthtml.com.scroll-pagination/vue1oix.js</javascript>-->
+        
+        <javascript>js/app.js</javascript>
+    </javascripts>
+
+</skin>

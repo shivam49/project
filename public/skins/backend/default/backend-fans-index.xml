@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin>
+
+    <stylesheets>
+        <stylesheet>../../../../library/bootstrap/css/bootstrap.min.css</stylesheet>
+        <stylesheet>../../../../library/bootstrap/css/bootstrap-responsive.min.css</stylesheet>
+        <stylesheet>../../../../library/bootstrap/font-awesome/css/font-awesome.min.css</stylesheet>
+        <stylesheet>../../../../library/bootstrap/font-awesome/css/font-awesome-ie7.min.css</stylesheet>
+        <stylesheet>css/app.css</stylesheet>
+    </stylesheets>
+
+    <javascripts>
+        <javascript>../../../../library/jQuery/jquery-1.9.0.min.js</javascript>
+<!--        <javascript>../../../../library/home/assets/js/jquery.backstretch.min.js</javascript>-->
+        <javascript>../../../../library/bootstrap/js/bootstrap.min.js</javascript>
+        <javascript>../../../../library/jQuery/dateSelectBoxes/dateSelectBoxes.js</javascript>
+        <javascript>../../../../library/jQuery/dateSelectBoxes/dateSelectBoxes.pack.js</javascript>
+        <javascript>js/app.js</javascript>
+    </javascripts>
+
+</skin>

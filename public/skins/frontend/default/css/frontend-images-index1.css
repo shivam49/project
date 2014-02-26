@@ -1,0 +1,41 @@
+.mouseC {
+    cursor: pointer;
+    width: 260px;
+    height: 180px;
+}
+
+.pDesc {
+    width: 100%;
+    height: 100px;
+    overflow: auto;
+}
+
+/*#imgBodyModal {
+    height: 600px;
+}*/
+
+.mouseCursore {
+    cursor: pointer;
+}
+/*
+*/.footerModal {
+    height: 180px;
+    overflow: auto;
+    width: 100%;
+}
+
+/*#modal_pic_id {
+    margin: -50px 0 0 -280px;
+}*/
+
+/*#modal_pic_id .modal-body {
+    max-height: 800px;
+    overflow: auto;
+}*/
+
+#modal_pic_id {
+    max-height: 800px;
+    width: 750px; /* SET THE WIDTH OF THE MODAL */
+    margin: -50px 0 0 -350px; /* CHANGE MARGINS TO ACCOMODATE THE NEW WIDTH (original = margin: -250px 0 0 -280px;) */
+    overflow: auto;
+}

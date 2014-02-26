@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+
+                    <div class="offset1"></div>
+                    <div class="span6">
+                        <ul class="nav bs-docs-sidenav affix" style="box-shadow: 0 1px 4px rgba(0, 0, 0, 0); border: none">
+                            
+                            <li>
+                                <a href="#form-insert-movie" style="border: none;background-color: transparent"><button class="btn btn-success pull-left" type="button" id="botton-add-movie">Create new move</button></a>
+                            </li>
+                            <li>
+                                <div class="span12" id="movie-show-div-id" style="margin-left: -35px"></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="span5">
+                        <div style="display: none ;margin-bottom: 30px" id="form-insert-movie">
+                            <form id="form-movie-embed" action="<?php echo APPLICATION_BASEURL; ?>/movies" >
+                                <div><label class="pull-left">insert embed code :</label></div>
+                                <div class="pull-right"><a target="_blank" href="http://support.google.com/youtube/bin/answer.py?hl=en&answer=171780&topic=2853697&ctx=topic"  style="text-decoration: none"><i class="icon-question-sign"></i>Embed videos</a></div>
+                                <textarea class="span12"rows="4" name="tVideo_embed_code" placeholder="insert embed code..." id="tVideo_embed_code" form="usrform"></textarea>
+                                <label>Description :</label>
+                                <textarea class="span12"rows="4" name="tDesc" placeholder="Description..." id="tDesc" ></textarea>
+                                <button class="btn btn-primary pull-right" type="button" id="more-info-form-save">Save Info</button>
+                              </form>
+                        </div>
+                        <div class="thumbnail clearfix"  style="box-shadow: 0 1px 4px rgba(0, 0, 0, 0); border: none;" id="thumbnail-show-image-youtube" > </div>
+                    </div>
+
+    </div>
+</div>
+
+               

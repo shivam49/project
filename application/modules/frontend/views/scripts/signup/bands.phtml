@@ -1,0 +1,117 @@
+<!--<div class="span1"></div>
+<div class="span10 page-back-all">
+    <div class="container-fluid">
+        <div class="span12">
+                <?php
+                    if($this->view->form){
+                        fb($this->view->form->getMessages());
+                    }
+                    if ( $this->errorMessage ) {
+                ?>
+                    <div class="alert alert-error">
+                        <?php print $this->errorMessage; ?>
+                    </div>
+                <?php }if ( $this->SuccessMessage ) { ?>
+                    <script>
+                        $("#alert-signup").remove();
+                    </script>
+                    <div class="alert alert-success">
+                        <?php print $this->SuccessMessage; ?>
+                        <script>
+                            var $projectExecPath = '<?php echo APPLICATION_BASEURL.'/wellcome'; ?>';
+                            var delay = 2000; //Your delay in milliseconds
+                            setTimeout(function(){ window.location = $projectExecPath; }, delay);
+                        </script>
+                    </div>
+                 <?php
+                }
+                ?>
+            <div  id="alert-signup" ></div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="span1">
+            
+        </div>
+        <div class="span10 back-all-form">
+            <div class="span12 back-all-title-form">Register Bands Form</div>
+            <div class="span2">
+                
+            </div>
+            <div class="span8">
+                
+                <div class="page-header">
+                    <h5>Create your account with facebook account</h5>
+                </div>
+                    <div  style="text-align: center"><a href="<?php echo APPLICATION_BASEURL; ?>/signup"  id="fbloginlink" ><img src="https://s3-us-west-1.amazonaws.com/fivefourclubimages/frontend/fb-login.jpg"></a></div>
+                <div  class="page-header">
+                    <h5>Create your account</h5>
+                </div>
+                <?php print $this->form; ?>
+            </div>
+            <div class="span2"></div>
+        </div>
+        <div class="span1"></div>
+    </div>
+</div>
+
+-->
+
+
+<html>
+    <head>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    </head>
+    
+    <body>
+        <div class="darkyellow-login" style="background:#f59711; width:100%; height:150px; margin:0 auto; padding:0;">
+            <p class="loginfbt">Register Bands Form</p>
+            <p class="loginfb">Use Facebook, Twitter or your email to <font color="#000000">Sign Up.</font></p>
+        </div>
+        
+        <div id="signupContent" style="height:350px;">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <div class="specialSignUp">
+                            <div class="row">
+                                <div class="span12">
+                                    <p style="color:#000; font-size:16px; font-weight:bold; float:left; margin-top:30px; margin-bottom:10px; padding:0;">
+                                        Create your account with facebook account and twitter account.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="span12">
+                                    <div class="span4">
+                                        <div class="fblogo">
+                                            <article id="signupTypesDialog" class="signupTypes lightbox open">
+                                                <section>
+                                                     <a href="<?php echo APPLICATION_BASEURL; ?>/Signup"  id="fbloginlink">
+                                                        <button class="facebook massive" data-provider="facebook" >
+                                                            <i class="facebook_170"></i><p>Facebook</p>
+                                                        </button>
+                                                    </a>
+                                                    <a href="#" style="display: none;">
+                                                        <button class="twitter massive" data-provider="twitter" style="margin-left:15px;"><i class="twitter_170"></i><p>Twitter</p>
+                                                        </button>
+                                                    </a>
+                                                </section>
+                                            </article>
+                                        </div>
+                                    </div>
+                                    <div class="span5">
+                                        <div class="loginform" style="width:300px; float:left; height:200px; padding-top:20px;">
+                                            <?php print $this->form; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

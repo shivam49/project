@@ -1,0 +1,72 @@
+#signupContent p {
+	font: 27px "ProximaNova Light","Myriad Pro",sans-serif;
+	padding-bottom: 0;
+}
+section {
+  padding-top: 0;
+}
+#header {height:216px; padding-top:24px; }
+.bandProfile1 {font-family:"Open Sans","Trebuchet MS",sans-serif; color:#FFF;}
+table.playTable {width:529px;; margin:0 auto; vertical-align:middle; }
+.row-fluid .span3 {width:29%; vertical-align:middle;}
+.row-fluid .span9 {width:710px;}
+.vrow {float:left; background:url(img/vrow.png) no-repeat; border:0; width:2px; height:236px; margin-top:-20px;}
+td {vertical-align:middle; font-family:"Open Sans","Trebuchet MS",sans-serif;}
+.signupBtns {margin:0 auto; width:80%;}
+.mostfans { float:left; color:#FFF; vertical-align:middle; margin:10px 15px 0 0;font-family:"Open Sans","Trebuchet MS",sans-serif;}
+.viewall { width:213px; height:44px; margin:0 auto; background:url(img/view_all.png) no-repeat; border:0; vertical-align:middle; text-align:center; padding-top:13px; color:#FFF;font-family:"Open Sans","Trebuchet MS",sans-serif; margin:35px auto;}
+
+.titlep {font-size:16px; margin-top:9px;}
+.tab-body {width:180px; line-height:30px; font-family:"Open Sans","Trebuchet MS",sans-serif; color:#666; font-size:18px; margin-left:25px;}
+.tab-body1 {width:120px; line-height:30px; font-family:"Open Sans","Trebuchet MS",sans-serif; color:#FFF; font-size:18px;}
+.vote1 {font-family:"Open Sans","Trebuchet MS",sans-serif; font-size:20px; color:#FFF; font-weight:normal; background:url(img/vote.png) no-repeat; width:529px; height:45px; border:0; text-align:center; vertical-align:middle;}
+.viewprofilebtn {background:url(img/view_profile.png) no-repeat; vertical-align:middle; float:right; padding-top:8px; margin-top:7px; width:170px; height:30px; border:0 none;}
+.space {height:15px;background: url("img/black-86.png") repeat scroll 0 0 transparent;}
+.maine-data {text-align:center !important; vertical-align:middle; font-family:"Open Sans","Trebuchet MS",sans-serif;}
+.maine-data1 {text-align:center !important; vertical-align:middle;font-family:"Open Sans","Trebuchet MS",sans-serif;}
+.serrator { vertical-align:middle; margin:0 auto; padding:0; width:5px;}
+/* Fix for responsive body padding in bootstrap */
+@media screen and (min-width: 320px) and (max-width: 700px) {
+	body { padding: 0; }
+}
+
+
+.regular-checkbox {
+	display: none;
+}
+
+.loginform {
+float:left;
+border:0 !important;
+height:35px !important;
+width:350px !important;
+margin:0 !important;	
+border-radius:0 !important; 
+}
+
+.regular-checkbox + label {
+	background-color: #fafafa;
+	border: 0px solid #cacece;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 9px;
+	float:left;
+	margin-top:12px;
+	display: inline-block;
+	position: relative;
+}
+
+
+.regular-checkbox:checked + label {
+	background-color: #FFFFFF;
+	border: 0px solid #adb8c0;
+	color: #99a1a7;
+}
+
+.regular-checkbox:checked + label:after {
+	content: '\2714';
+	font-size: 14px;
+	position: absolute;
+	top: 0px;
+	left: 3px;
+	color: #99a1a7;
+}

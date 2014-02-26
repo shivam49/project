@@ -1,0 +1,22 @@
+<?php
+if ($this->errorMessage) {
+    ?>
+    <div id="login_errorBox" class="alert alert-error"><span><?php print $this->errorMessage; ?></span></div>
+    <?php
+}
+?>
+<?php
+if ($this->SuccessMessage) {
+    ?>
+    <div id="login_messageBox" class="alert alert-success"><span><?php print $this->SuccessMessage; ?></span></div>
+    <?php
+}
+?>
+<form name="frm-login" id="frm-login" method="post" action="">
+    <div id="login_Entery">
+        <div id="login_Email">Email : <input type="text" class="enter_login" name="txt-email" id="txt-email" value=""/></div>
+        <div id="login_Pass">Password : <input type="password" class="enter_login" name="txt-password" id="txt-password" value=""/></div>
+        <input class="btn btn-success" type="submit" value="Login">
+        </div>
+    </div>
+</form>

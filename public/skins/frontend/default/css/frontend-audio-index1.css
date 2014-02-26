@@ -1,0 +1,95 @@
+.jstree-default.jstree-focused.jstree-default.jstree-focused.jstree-default.jstree-focused{
+    background: none;
+}
+
+.show-audio-details{
+    background-color: #fff;
+    padding: 5px;
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+}
+.show-audio-details h6{
+    font-size: 10px;
+    color: #999;
+    margin: 0
+}
+.show-track-list{
+    
+    background-color: #ededed;
+    padding: 0 5px;
+    margin: 5px 5px 0
+}
+.show-track-list h5{
+    margin: 0
+}
+.botton-release-album{
+    background-color: yellow;
+    /*width: 100% ;*/
+    position: absolute ;
+    top: 5px
+}
+.botton-release-album a{
+    text-decoration: none
+}
+
+.botton-change-album{
+    /*background-color: red;*/
+    margin-top: 130px;
+    position: absolute;
+    right: 5px
+}
+
+.info-audio-now-play{
+        
+/* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(top, #FCFCFC 0%, #FFFFFF 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(top, #FCFCFC 0%, #FFFFFF 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(top, #FCFCFC 0%, #FFFFFF 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FCFCFC), color-stop(1, #FFFFFF));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #FCFCFC 0%, #FFFFFF 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to bottom, #FCFCFC 0%, #FFFFFF 100%);
+    height:200px
+}
+.info-audio-now-play h5{
+    margin-left: 15px;
+    margin-top: 10px
+}
+
+.info-audio-now-play h6{
+    font-size: 10px;
+    color: #999;
+    margin-left: 25px;
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+.notifile-errors{
+    position: absolute;
+    top: 45px;
+    right:10px; 
+/*    height: 200px;
+    background-color: red  ;*/
+    z-index: 999999;
+    margin: 5px;
+    display: none
+}
+@media (max-width: 767px) {
+    .botton-change-album{
+        margin-top: -20px
+    }
+  
+}
+
+

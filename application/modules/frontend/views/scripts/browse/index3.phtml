@@ -1,0 +1,48 @@
+<div class="container">
+	 <div class="signupBtns"><p style="float:left; margin:12px 30px 0 -25px; color:#FFF;">SORT BY:</p>
+		<a class="pillLink signin" style="float:left;" id="sort_by_most_vote" data-sort="">MOST VOTES <i class=""></i></a>
+		<a class="pillLink signin" style="float:left;margin-left: 5px;" id="sort_by_top_songs" data-sort="">TOP SONGS <i class=""></i></a>
+                <a class="pillLink signin" style="float:left;margin-left: 5px;" id="sort_by_most_fans" data-sort="">MOST FANS <i class=""></i></a>
+                <a class="pillLink signin" id="search-data-btn" href="#myModal" role="button" data-toggle="modal">SEARCH</a>
+                <a class="pillLink signup" id="reset_search_data" data-search="" style="display: none">RESET SEARCH</a>
+<!--                <button class="btn btn-primary pull-right" id="reset_search_data" data-search="" style="display: none">RESET SEARCH</button>-->
+	  </div>
+     
+        <!-- Modal -->
+        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></button>
+                <h5 id="myModalLabel">Search Band Name</h5>
+            </div>
+            <div class="modal-body">
+                <form id="form-send-data" action="<?php echo APPLICATION_BASEURL; ?>/browse">
+                    <input type="text" name="search-data" id="search-data" placeholder="Band Name..."  style="width: 85%;height : 50px; border-top:0;border-right:0;border-left:0;background-color:#000">
+                    <a id="search-band-name" class="pillLink signup" style="margin-top:-10px; width: 45px" >Search</a>
+                </form>
+            </div>
+<!--            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                <button class="btn btn-primary">Save changes</button>
+            </div>-->
+        </div>
+     <div style="height:15px;"></div>
+      <div class="row">
+      <table class="playTable">
+          <tbody id ="tBody_table_td"></tbody>
+          <tr style="height:20px;"></tr>
+<!--            <tr>
+                <td><span style="float:left; margin:0 10px 0 0;"><img src="img/album.jpg" alt="album"></span>
+                    <h2>Band Name</h2>
+                    <h4 style="color:#666;">Los Angeles, CA</h4>
+                </td>
+                <td class="maine-data">10K Fans</td>
+                <td class="serrator"><img src="img/vbar.gif" alt="vbar"></td>
+                <td class="maine-data">52K Votes</td>
+                <td class="serrator"><img src="img/vbar.gif" alt="vbar"></td>
+                <td class="maine-data">200K Plays</td>
+                <td class="maine-data1"><a href="#" class="viewprofilebtn">VIEW PROFILE</a></td>
+            </tr>
+            <tr style="height:2px;"></tr>-->
+        </table>
+        </div>
+        </div>

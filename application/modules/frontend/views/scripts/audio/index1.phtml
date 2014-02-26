@@ -1,0 +1,151 @@
+<div class="pull-right notifile-errors" id="notifier-errors"></div>
+<div class="row-fluid">
+    
+
+<div class="span6 page-back-all">
+    
+    <div class="row-fluid" style="margin-top: 5px">
+        
+    
+    <div class="span12" style="">
+            <input type="file" name="file_upload" id="file_upload" />
+    </div>
+  
+     
+</div>
+    
+    <div>
+        <div class="container-fluid" style="margin-bottom: 5px">
+    <div class="span12">
+        <div id="mmenu" class="pull-left">
+            <input type="button" class="btn btn-success" id="add_folder" value="add album"/>
+        <!--<input type="button" id="add_default" value="add file" style="display:block; float:left;"/>-->
+            <input type="button" id="rename" class="btn btn-primary" value="rename"/>
+            <input type="button" id="remove" value="remove" class="btn btn-danger"/>
+        <!--<input type="button" id="cut" value="cut" style="display:block; float:left;"/>
+        <input type="button" id="copy" value="copy" style="display:block; float:left;"/>
+        <input type="button" id="paste" value="paste" style="display:block; float:left;"/>
+        <input type="button" id="clear_search" value="clear" style="display:block; float:right;"/>
+        <input type="button" id="search" value="search" style="display:block; float:right;"/>-->
+        <!--<input type="text" id="text" value="" style="display:block; float:right;" />-->
+
+        </div>
+        <div class="pull-right">
+            <div class="btn btn-navbar" onclick="$.get('audio/get-list-album', function () { $('#demo').jstree('refresh',-1); });"><i class="icon-refresh"></i></div>
+            <!--<input type="button" style='width:170px; height:24px; margin:5px auto;' value="reconstruct" onclick="$.get('./server.php?reconstruct', function () { $('#demo').jstree('refresh',-1); });" />-->
+        </div>
+        
+    </div>
+      
+</div>
+    <div class="row-fluid">
+        <div id="demo"></div>
+    </div>
+    </div>
+<!--	<input type="button" style='width:170px; height:24px; margin:5px auto;' id="analyze" value="analyze" onclick="$('#alog').load('./server.php?analyze');" />
+	<input type="button" style='width:170px; height:24px; margin:5px auto;' value="refresh" onclick="$('#demo').jstree('refresh',-1);" />-->
+
+        
+
+
+
+
+</div>
+<div class="span6">
+<!--    <div class="row-fluid info-audio-now-play" id="show-audio-player-details-id">
+                    
+        </div>-->
+    <div class="span12" id="show-audio-player-details">
+        
+        <div class="span12">
+            <div class="span2"></div>
+            <div class="span6">
+                    <div id="show-audio-player-id">
+                    <!-- The jPlayer div must not be hidden. Keep it at the root of the body element to avoid any such problems. -->
+    <!--                <div id="jquery_jplayer_1" class="cp-jplayer"></div>-->
+
+                    <!-- The container for the interface can go where you want to display it. Show and hide it as you need. -->
+
+    <!--                <div id="cp_container_1" class="cp-container">
+                            <div class="cp-buffer-holder">  .cp-gt50 only needed when buffer is > than 50% 
+                                    <div class="cp-buffer-1"></div>
+                                    <div class="cp-buffer-2"></div>
+                            </div>
+                            <div class="cp-progress-holder">  .cp-gt50 only needed when progress is > than 50% 
+                                    <div class="cp-progress-1"></div>
+                                    <div class="cp-progress-2"></div>
+                            </div>
+                            <div class="cp-circle-control"></div>
+                            <ul class="cp-controls">
+                                    <li><a class="cp-play" tabindex="1">play</a></li>
+                                    <li><a class="cp-pause" style="display:none;" tabindex="1">pause</a></li>  Needs the inline style here, or jQuery.show() uses display:inline instead of display:block 
+                            </ul>
+                    </div>-->
+
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+    <div id="show-audio-details-id" >
+<!--            <div class="span12 show-audio-details">
+                <div class="span12">
+                    <div class="span4">
+                        <img src="<?php echo APPLICATION_BASEURL.'/public/uploaded_resource/frontend/registers.jpg' ?>" style="width: 100%;height: 150px" />
+                        <div class="botton-release-album"><a href="#"><h6>Release This Album</h6></a></div>
+                    </div>
+                    <div class="span8">
+                        <h5>album titleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</h5>
+                        <h6>Date Create : 2013-05-13 21:05:59</h6>
+                        <h6>Date Release : 2013-05-13 21:05:59</h6>
+                        <h6>Date Modify : 2013-05-13 21:05:59</h6>
+                        
+                        
+                    </div>
+                    <div class="botton-change-album text-right"><i class="icon-edit"></i></div>
+                </div>
+                <div class="span12  show-track-list" style="margin-left: 0">
+                    <div class="span12" style="margin-top: 5px">
+                        <div class="span7">
+                            <h5><i class="icon-music"></i> Track Name</h5>
+                        </div>
+                        <div class="span5 text-right">
+                            <h6>Date Release : 2013-05-13 21:05:59</h6>
+                        </div>
+                        
+
+                    </div>
+                </div>
+                <div class="span12  show-track-list" style="margin-left: 0">
+                    <div class="span12" style="margin-top: 5px">
+                        <div class="span7">
+                            <h5><i class="icon-music"></i> Track Name</h5>
+                        </div>
+                        <div class="span5 text-right">
+                            <h6>Date Release : 2013-05-13 21:05:59</h6>
+                        </div>
+                        
+
+                    </div>
+                </div>
+                <div class="span12  show-track-list" style="margin-left: 0">
+                    <div class="span12" style="margin-top: 5px">
+                        <div class="span7">
+                            <h5><i class="icon-music"></i> Track Name</h5>
+                        </div>
+                        <div class="span5 text-right">
+                            <h6>Date Release : 2013-05-13 21:05:59</h6>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>-->
+            
+            
+    </div>
+</div>
+    
+    </div>
+

@@ -1,0 +1,31 @@
+
+<div class="span1">
+ 
+</div>
+<div class="span10 page-back-all">
+    <div class="container-fluid">
+        <!--<div class="span1 offset1"></div>-->
+        <div class="span12">
+            <?php if($this->passwordChange){ ?>
+                <div class="alert alert-success">
+                    <h4>Success</h4>
+                    Change Password Successfully. New Password Sent For You With Email. Please Check Mail And Login With New Password.
+                </div>
+            <?php } ?>
+            <?php if($this->passwordProblem){ ?>
+                <div class="alert alert-block">
+                    <h4>Warning!</h4>
+                    Change Password Failed. Please Try Again Later.
+                </div>
+            <?php }if($this->passwordInvalidLink){ ?>
+                <div class="alert alert-error">
+                    <h4>Error!</h4>
+                    Change Password Failed.Invalid password confirmation link.
+                </div>
+            <?php } ?>
+        </div>
+        <!--<div class="span1 offset1"></div>-->
+    </div>
+    
+    
+</div>

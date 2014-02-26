@@ -1,0 +1,232 @@
+    
+<div class="span1">
+    
+</div>
+<div class="span10 page-back-all">
+<!--    <div class="page-header">
+     Profile View Test
+    </div>-->
+    <div class="tabbable tabs-left" id="tabTest">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#lA" id="tab_lA">User Information</a></li>
+            <li class=""><a data-toggle="tab" href="#lB" id="tab_lB">Change Password</a></li>
+            <!--<li class=""><a data-toggle="tab" href="#lC" id="tab_lC">About</a></li>-->
+        </ul>
+        <div class="tab-content">
+            <div id="lA" class="tab-pane active">
+                <!--<div class="container-fluid"> <img src="<?php echo APPLICATION_BASEURL.'/public/uploaded_resource/frontend/defaultimage_yellowgreen_940x180.png' ?>"/></div>-->
+                <div class="container-fluid">
+                    <div class="accordion" id="accordion2">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" style="background-color: #ededed" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                    Basic Information
+                                </a>
+                            </div>
+                            <div id="collapseOne" class="accordion-body collapse in">
+                                <div class="accordion-inner">
+                                    <div class="span12">
+                                        <div id="alert-login-faild"></div>
+                                    </div>
+                                    <div  id="majid-show">
+                                        <div class="span3">
+                                            <div class="container-fluid">
+                                                <img class="img-circle" width="125px" src="<?php echo APPLICATION_BASEURL.'/public/uploaded_resource/frontend/defualt.jpg' ?>"/>
+                                            </div>
+                                        </div>
+                                        <div class="span9">
+                                            <div class="row-fluid"><div class="span2"> Title : </div><div  class="span10" id="profile_vTitle">-</div></div>
+                                            <div class="row-fluid"><div class="span2"> Email : </div><div  class="span9" id="profile_vEmail">-</div></div>
+                                            <div class="row-fluid"><div class="span2"> Website : </div><div  class="span9"><a href="" id="profile_vWebsite_link"><div  id="profile_vWebsite">-</div></a></div></div>
+
+                                        </div>
+                                        <div class="row-fluid"><button class="btn btn-primary pull-right" type="button" id="edit-info">Edit</button></div>
+                                    </div>
+                                    <div id="majid-hide" style="width: 98%;height: auto;display: none">
+                                        <div class=" span12 page-back-all">
+                                            <div class="row-fluid">
+                                                <form id="basic-info-form" action="<?php echo APPLICATION_BASEURL; ?>/profile">
+                                                    <div class="container-fluid">
+                                                        <div class="span6">
+                                                            <label>Email</label>
+                                                            <input type="text" id="pre_vEmail" name="vEmail" placeholder="Email..." style="width:93%;" >
+                                                            <label>website</label>
+                                                            <input type="text" id="pre_vWebSite" name="vWebsite" placeholder="Website..." style="width:93%;" >
+                                                        </div>
+                                                        <div class="span6">
+                                                            <label>Title</label>
+                                                            <input type="text" id="pre_vTitle" name="vTitle" placeholder="Title..." style="width:93%;" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="container-fluid">
+                                                          <button class="btn btn-primary" type="button" id="back-info">Back</button>
+                                                          <button class="btn btn-primary pull-right" type="button" id="basic-info-form-save">Save Info</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+<!--                        <div class="accordion-group"  id="collapseTwo-toggel">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle"  style="background-color: #ededed" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                                    Other Information
+                                </a>
+                            </div>
+                            <div id="collapseTwo" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <div class="span12">
+                                        <div id="alert-login-faild2"></div>
+                                    </div>
+                                    <div  id="majid-show1" >
+                                        <div class="row-fluid"><div class="span6"><div class="span4"> Company : </div><div  class="span8" id="profile1_vCompany">-</div></div><div class="span6"><div class="span4">Birth date : </div><div  class="span8" id="profile1_dBirth_date">-</div></div></div>
+                                        <div class="row-fluid"><div class="span6"><div class="span4"> Address : </div><div  class="span8" id="profile1_vAddress">-</div></div><div class="span6"><div class="span4"> Address2 : </div><div  class="span8" id="profile1_vAddress2">-</div></div></div>
+                                        <div class="row-fluid"><div class="span6"><div class="span4"> City : </div><div  class="span8" id="profile1_vCity">-</div></div><div class="span6"><div class="span4"> Country : </div><div  class="span8" id="profile1_vCountry">-</div></div></div>
+                                        <div class="row-fluid"><div class="span6"><div class="span4"> State : </div><div  class="span8" id="profile1_vState">-</div></div><div class="span6"><div class="span4"> Zipcode : </div><div  class="span8" id="profile1_vZipcode">-</div></div></div>
+                                        <div class="row-fluid"><div class="span6"><div class="span4"> Phone : </div><div  class="span8" id="profile1_vPhone">-</div></div><div class="span6"><div class="span4"> Fax : </div><div  class="span8" id="profile1_vFax">-</div></div></div>
+                
+                                        <div class="row-fluid"><button class="btn btn-primary pull-right" type="button" id="edit-info1">Edit</button></div>
+                                    </div>
+                                    <div id="majid-hide1" style="width: 98%;height: auto;display: none">
+                                        <div class=" span12 page-back-all">
+                                            <div class="row-fluid">
+                                                <form id="more-info-form" action="<?php echo APPLICATION_BASEURL; ?>/profile">
+                                                    <div class="container-fluid">
+                                                        <div class="span6">
+                                                            <label>Company</label>
+                                                            <input type="text" id="pre1_vCompany" name="vCompany" placeholder="Company..." style="width:93%;" >
+                                                            <label>Address</label>
+                                                            <input type="text" id="pre1_vAddress" name="vAddress" placeholder="Address..." style="width:93%;" >
+                                                            <label>City</label>
+                                                            <input type="text" id="pre1_vCity" name="vCity" placeholder="City..." style="width:93%;" >
+                                                            <label>State</label>
+                                                            <input type="text" id="pre1_vState" name="vState" placeholder="State..." style="width:93%;" >
+                                                            <label>Phone</label>
+                                                            <input type="text" id="pre1_vPhone" name="vPhone" placeholder="Phone..." style="width:93%;" >
+                                                        </div>
+                                                        <div class="span6">
+                                                            <label>Birth Date</label>
+                                                            <input type="number" name="d" placeholder="DD" maxlength="2" style="width:25%;" /> /
+                                                            <input type="number" name="m" placeholder="MM" maxlength="2" style="width:25%;" /> /
+                                                            <input type="number" name="y" placeholder="YYYY" maxlength="4"  style="width:30%;" />
+                                                            <input type="text" id="pre1_dBirth_date" name="dBirth_date" placeholder="Birth Date..." style="width:93%;" >
+                                                            <label>Address2</label>
+                                                            <input type="text" id="pre1_vAddress2" name="vAddress2" placeholder="vAddress2..." style="width:93%;" >
+                                                            <label>Country</label>
+                                                            <input type="text" id="pre1_vCountry" name="vCountry" placeholder="Country..." style="width:93%;" >
+                                                            <label>Zipcode</label>
+                                                            <input type="text" id="pre1_vZipcode" name="vZipcode" placeholder="Zipcode..." style="width:93%;" >
+                                                            <label>Fax</label>
+                                                            <input type="text" id="pre1_vFax" name="vFax" placeholder="Fax..." style="width:93%;" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="container-fluid">
+                                                          <button class="btn btn-primary" type="button" id="back-info1">Back</button>
+                                                          <button class="btn btn-primary pull-right" type="button" id="more-info-form-save">Save Info</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-group"  id="collapseTwo-togge2">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle"  style="background-color: #ededed" data-toggle="collapse" data-parent="#accordion2" href="#collapseTree">
+                                    Ship Information
+                                </a>
+                            </div>
+                            <div id="collapseTree" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <div class="span12">
+                                        <div id="alert-login-faild3"></div>
+                                    </div>
+                                    <div  id="majid-show2" >
+                                        <div class="row-fluid"><div class="span6"><div class="span4"> Ship Name : </div><div  class="span8" id="profile2_vShip_name">-</div></div><div class="span6"><div class="span4">Ship City : </div><div  class="span8" id="profile2_vShip_city">-</div></div></div>
+                                        <div class="row-fluid"><div class="span6"><div class="span4"> Ship Lastname : </div><div  class="span8" id="profile2_vShip_lastname">-</div></div><div class="span6"><div class="span4"> Ship Country : </div><div  class="span8" id="profile2_vShip_country">-</div></div></div>
+                                        <div class="row-fluid"><div class="span6"><div class="span4"> Ship Address : </div><div  class="span8" id="profile2_vShip_address">-</div></div><div class="span6"><div class="span4"> Ship State : </div><div  class="span8" id="profile2_vShip_state">-</div></div></div>
+                                        <div class="row-fluid"><div class="span6"><div class="span4"> Ship Address2 : </div><div  class="span8" id="profile2_vShip_address2">-</div></div><div class="span6"><div class="span4"> Ship Zipcode : </div><div  class="span8" id="profile2_vShip_zipcode">-</div></div></div>
+                
+                                        <div class="row-fluid"><button class="btn btn-primary pull-right" type="button" id="edit-info2">Edit</button></div>
+                                    </div>
+                                    <div id="majid-hide2" style="width: 98%;height: auto;display: none">
+                                        <div class=" span12 page-back-all">
+                                            <div class="row-fluid">
+                                                <form id="ship-info-form" action="<?php echo APPLICATION_BASEURL; ?>/profile">
+                                                    <div class="container-fluid">
+                                                        <div class="span6">
+                                                            <label>Ship Name</label>
+                                                            <input type="text" id="pre2_vShip_name" name="vShip_name" placeholder="Ship Name..." style="width:93%;" >
+                                                            <label>Ship lastname</label>
+                                                            <input type="text" id="pre2_vShip_lastname" name="vShip_lastname" placeholder="Ship lastname..." style="width:93%;" >
+                                                            <label>Ship Address</label>
+                                                            <input type="text" id="pre2_vShip_address" name="vShip_address" placeholder="Ship Address..." style="width:93%;" >
+                                                            <label>Ship Address2</label>
+                                                            <input type="text" id="pre2_vShip_address2" name="vShip_address2" placeholder="Ship Address2..." style="width:93%;" >
+                                                            
+                                                        </div>
+                                                        <div class="span6">
+                                                            <label>Ship City</label>
+                                                            <input type="number" name="d" placeholder="DD" maxlength="2" style="width:25%;" /> /
+                                                            <input type="number" name="m" placeholder="MM" maxlength="2" style="width:25%;" /> /
+                                                            <input type="number" name="y" placeholder="YYYY" maxlength="4"  style="width:30%;" />
+                                                            <input type="text" id="pre2_vShip_city" name="vShip_city" placeholder="Ship City..." style="width:93%;" >
+                                                            <label>Ship Country</label>
+                                                            <input type="text" id="pre2_vShip_country" name="vShip_country" placeholder="Ship Country..." style="width:93%;" >
+                                                            <label>Ship State</label>
+                                                            <input type="text" id="pre2_vShip_state" name="vShip_state" placeholder="Ship State..." style="width:93%;" >
+                                                            <label>Ship Zipcode</label>
+                                                            <input type="text" id="pre2_vShip_zipcode" name="vShip_zipcode" placeholder="Ship Zipcode..." style="width:93%;" >
+                                                        </div>
+                                                    </div>
+                                                    <div class="container-fluid">
+                                                          <button class="btn btn-primary" type="button" id="back-info2">Back</button>
+                                                          <button class="btn btn-primary pull-right" type="button" id="ship-info-form-save">Save Info</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <div id="lB" class="tab-pane">
+                <div class="span12" id="alert-change-password"></div>
+                <div class="container-fluid">
+                    
+                    <div class="span12 back-all-title-form">Change Password</div>
+                    
+                    <!--<div class="span12">-->
+                        <div class="span2"> </div>
+                        <div class="span8">
+                            <form id="change-password-form" action="<?php echo APPLICATION_BASEURL; ?>/profile">
+                                <fieldset>
+                                    <div class="row-fluid">
+                                        <label>Current Password</label>
+                                        <input type="password" name="CuPassword" placeholder="Current Password..." style="width:95%;" >
+                                        <label>New Password</label>
+                                        <input type="password" name="vPassword" placeholder="New Password..." style="width:95%;" >
+                                        <label>Password Confirm</label>
+                                        <input type="password" name="vPasswordConfirm" placeholder="Password Confirm..." style="width:95%;">
+                                    </div>
+                                    <div class="row-fluid">
+                                        <div class="span3">
+                                            <input type="button" value="Change Password" name="change-password-form-save" id="change-password-form-save" class="btn btn-success" />
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    <!--</div>-->
+                </div>
+            </div>
+            <!--<div id="lC" class="tab-pane"><p>about user login.</p></div>-->
+        </div>
+    </div>
+</div>

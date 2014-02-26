@@ -1,0 +1,373 @@
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+<!--            <form id="register_vote_id">
+                <button id="btn_add_vote_id" data-trigger="hover"  class="btn btn-primary" value="addVote"><span id="icon_vote_id" class="icon-thumbs-up icon-white"></span> VOTE</button>
+            </form>-->
+        </div>
+        <div data-login="<?php print $this->login ?>" data-idProfile="" id="<?php print $this->idProfile ?>"></div>
+        
+        
+        <div class="span5">
+            <div class="hide" id="hidden_block_vote_id">
+                <div class="alert alert-block" id="alert_block_vote_id">
+                    <h4>Warning!</h4>
+                    Best check yo self, you're not...
+                </div>
+            </div>
+            <div class="hide" id="hidden_success_vote_id">
+                <div class="alert alert-success" id="alert_success_vote_id">
+                    <h4>success!</h4>
+                    Best check yo self, you're not...
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+<!--        <div class="span2">
+            <a class="btn btn-primary" href="<?php echo APPLICATION_BASEURL; ?>/images"><span class="icon-picture icon-white"></span> Photo</a>
+        </div>-->
+    </div>
+<!--    <div data-login="<?php echo $this->login ?>"></div>-->
+    <div class="hidden" id="hidden_block_login_id">
+        <div class="alert alert-block" id="alert_block_login_id">
+            <h4>not login!</h4>
+            please login
+        </div>
+    </div>
+    <?php 
+        if($this->arrayFinalView['eightPhoto'] == ''){
+            echo '
+                <div data-emptyPhoto="notPhoto"></div>
+                ';
+        }
+        if($this->arrayFinalView['eightVideo'] == '') {
+            echo '
+                <div data-emptyVideo="notVideo"></div>
+                ';
+        }
+    ?>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="row-fluid">
+                <div class="span8 offset2">
+                    <div class="span5">
+                        <h3 style="color: #2d5097;">
+                            <?php print $this->arrayFinalView['bandName']; ?>
+                        </h3>
+                        <img class="imgSize" src="<?php echo APPLICATION_BASEURL; ?>/public/uploaded_resource/frontend/member/profile-image/<?php print $this->arrayFinalView['picProfile']; ?>" />
+                    </div>
+                    <div class="span6 offset1">
+                        <div class="row">
+<!--                            <form id="register_vote_id">-->
+                                <button style="margin-top: 60px;" id="btn_add_vote_id" data-trigger="hover"  class="btn btn-primary span12" value="addVote"><span id="icon_vote_id" class="icon-thumbs-up icon-white"></span> VOTE</button>
+<!--                            </form>-->
+                        </div>
+                        <div data-title="players" class="row">
+                            <div class="span12"  style="background-color: #D0D0D0; height: 245px; margin-top: 10px;">
+                                players
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-title="information" class="row-fluid">
+                <div class="span8 offset2">
+                    <div class="text-center">
+                        <h3 style="color: #2d5097;"><?php print $this->arrayFinalView['bandName']; ?> from <?php echo $this->arrayFinalView['location'] ?></h3>
+                    </div>
+                    <div class="control-group">
+                        <table align="right" class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <ul class="inline">
+                                            <li><h5>Overall Votes:</h5></li>
+                                            <li><h6><?php echo $this->arrayFinalView['overallVotes'] ?></h6></li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="inline">
+                                            <li><h5>Location: </h5></li>
+                                            <li><h6><?php echo $this->arrayFinalView['location'] ?></h6></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <ul class="inline">
+                                            <li><h5>Fan: </h5></li>
+                                            <li><h6><?php echo $this->arrayFinalView['fanOfBand'] ?></h6></li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="inline">
+                                            <li><h5>Market:</h5></li>
+                                            <li><h6><?php echo $this->arrayFinalView['market'] ?></h6></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <ul class="inline">
+                                            <li><h5>Total Plays: </h5></li>
+                                            <li><h6><?php echo $this->arrayFinalView['track'] ?></h6></li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul class="inline">
+                                            <li><h5>Genre:</h5></li>
+                                            <li><h6><?php echo $this->arrayFinalView['genres'] ?></h6></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <ul class="inline">
+                                            <li><h5>Members:</h5></li>
+                                            <li><h6><?php echo $this->arrayFinalView['members'] ?></h6></li>
+                                        </ul>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <ul class="inline text-center">
+                            <li>facebook</li>
+                            <li>twitter</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div data-title="video" class="row-fluid">
+                <div class="span8 offset2">
+                    <div class="text-center">
+                        <h3 style="color: #2d5097;"><?php print $this->arrayFinalView['bandName']; ?> Videos</h3>
+                    </div>
+                    <div class="span12">
+                        <ul class="thumbnails">
+                            <?php
+                                if($this->arrayFinalView['eightVideo'][0] != NULL){
+                                    echo '
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a class="thumbnail">
+                                                    <img data-videosName="" id="'.$this->arrayFinalView['eightVideo'][0]['iId'].'" href="#modal_id" data-toggle="modal" class="img-rounded imgSizeVideo" src="'.$this->arrayFinalView['eightVideo'][0]['tVideo_image'].'" />
+                                                </a>
+                                                <p>'.$this->arrayFinalView['eightVideo'][0]['vVideo_title'].'</p>
+                                            </div>
+                                        </li>';
+                                }
+                                
+                                if($this->arrayFinalView['eightVideo'][1] != NULL){
+                                    echo '
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a class="thumbnail">
+                                                    <img data-videosName="" id="'.$this->arrayFinalView['eightVideo'][1]['iId'].'" href="#modal_id" data-toggle="modal" class="img-rounded imgSizeVideo" src="'.$this->arrayFinalView['eightVideo'][1]['tVideo_image'].'" />
+                                                </a>
+                                                <p>'.$this->arrayFinalView['eightVideo'][1]['vVideo_title'].'</p>
+                                            </div>
+                                        </li>';
+                                }
+                                
+                                if($this->arrayFinalView['eightVideo'][2] != NULL){
+                                    echo '
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a class="thumbnail">
+                                                    <img data-videosName="" id="'.$this->arrayFinalView['eightVideo'][2]['iId'].'" href="#modal_id" data-toggle="modal" class="img-rounded imgSizeVideo" src="'.$this->arrayFinalView['eightVideo'][2]['tVideo_image'].'" />
+                                                </a>
+                                                <p>'.$this->arrayFinalView['eightVideo'][2]['vVideo_title'].'</p>
+                                            </div>
+                                        </li>';
+                                }
+                                
+                                if($this->arrayFinalView['eightVideo'][3] != NULL){
+                                    echo '
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a class="thumbnail">
+                                                    <img data-videosName="" id="'.$this->arrayFinalView['eightVideo'][3]['iId'].'" href="#modal_id" data-toggle="modal" class="img-rounded imgSizeVideo" src="'.$this->arrayFinalView['eightVideo'][3]['tVideo_image'].'" />
+                                                </a>
+                                                <p>'.$this->arrayFinalView['eightVideo'][3]['vVideo_title'].'</p>
+                                            </div>
+                                        </li>';
+                                }
+                            ?>
+                        </ul>
+                        
+                        <ul class="thumbnails">
+                            <?php
+                                if($this->arrayFinalView['eightVideo'][4] != NULL){
+                                    echo '
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a class="thumbnail">
+                                                    <img data-videosName="" id="'.$this->arrayFinalView['eightVideo'][4]['iId'].'" href="#modal_id" data-toggle="modal" class="img-rounded imgSizeVideo" src="'.$this->arrayFinalView['eightVideo'][4]['tVideo_image'].'" />
+                                                </a>
+                                                <p>'.$this->arrayFinalView['eightVideo'][4]['vVideo_title'].'</p>
+                                            </div>
+                                        </li>';
+                                }
+                                
+                                if($this->arrayFinalView['eightVideo'][5] != NULL){
+                                    echo '
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a class="thumbnail">
+                                                    <img data-videosName="" id="'.$this->arrayFinalView['eightVideo'][5]['iId'].'" href="#modal_id" data-toggle="modal" class="img-rounded imgSizeVideo" src="'.$this->arrayFinalView['eightVideo'][5]['tVideo_image'].'" />
+                                                </a>
+                                                <p>'.$this->arrayFinalView['eightVideo'][5]['vVideo_title'].'</p>
+                                            </div>
+                                        </li>';
+                                }
+                                
+                                if($this->arrayFinalView['eightVideo'][6] != NULL){
+                                    echo '
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a class="thumbnail">
+                                                    <img data-videosName="" id="'.$this->arrayFinalView['eightVideo'][6]['iId'].'" href="#modal_id" data-toggle="modal" class="img-rounded imgSizeVideo" src="'.$this->arrayFinalView['eightVideo'][6]['tVideo_image'].'" />
+                                                </a>
+                                                <p>'.$this->arrayFinalView['eightVideo'][6]['vVideo_title'].'</p>
+                                            </div>
+                                        </li>';
+                                }
+                                
+                                if($this->arrayFinalView['eightVideo'][7] != NULL){
+                                    echo '
+                                        <li class="span3">
+                                            <div class="thumbnail">
+                                                <a class="thumbnail">
+                                                    <img data-videosName="" id="'.$this->arrayFinalView['eightVideo'][7]['iId'].'" href="#modal_id" data-toggle="modal" class="img-rounded imgSizeVideo" src="'.$this->arrayFinalView['eightVideo'][7]['tVideo_image'].'" />
+                                                </a>
+                                                <p>'.$this->arrayFinalView['eightVideo'][7]['vVideo_title'].'</p>
+                                            </div>
+                                        </li>';
+                                }
+                            ?>
+                        </ul>
+                    </div>
+                    <div class="span8 offset3">
+                        <a class="btn btn-primary span9" href="<?php echo APPLICATION_BASEURL; ?>/movies">VIEW ALL VIDEOS</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div data-title="photo" class="row-fluid">
+                <div class="span8 offset2">
+                    <div class="text-center">
+                        <h3 style="color: #2d5097;"><?php print $this->arrayFinalView['bandName']; ?> Photos</h3>
+                    </div>
+                    <div class="span12">
+                        <ul class="thumbnails">
+                            <?php 
+                                if($this->arrayFinalView['eightPhoto'][0] != NULL){
+                                    echo '
+                                        <li class="span3">
+                                            <a class="thumbnail">
+                                                <img data-picName="'.$this->arrayFinalView['eightPhoto'][0]['vImg'].'" href="#modal_id" data-toggle="modal" class="img-rounded imgSizeVideo" src="'.APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][0]['vImg'].'" />
+                                            </a>
+                                        </li>';
+                                } 
+                            
+                                if($this->arrayFinalView['eightPhoto'][1] != NULL){
+                                    echo '
+                                        <li class="span3">
+                                            <a class="thumbnail">
+                                                <img data-picName="'.$this->arrayFinalView['eightPhoto'][1]['vImg'].'" href="#modal_id" data-toggle="modal" class="img-rounded imgSizeVideo" src="'.APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][1]['vImg'].'" />
+                                            </a>
+                                        </li>';
+                                } 
+                           
+                                if($this->arrayFinalView['eightPhoto'][2] != NULL){
+                                    echo '
+                                        <li class="span3">
+                                            <a class="thumbnail">
+                                                <img data-picName="'.$this->arrayFinalView['eightPhoto'][2]['vImg'].'" href="#modal_id" data-toggle="modal" class="img-rounded imgSizeVideo" src="'.APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][2]['vImg'].'" />
+                                            </a>
+                                        </li>';
+                                } 
+                            
+                                if($this->arrayFinalView['eightPhoto'][3] != NULL){
+                                    echo '
+                                        <li class="span3">
+                                            <a class="thumbnail">
+                                                <img data-picName="'.$this->arrayFinalView['eightPhoto'][3]['vImg'].'" href="#modal_id" data-toggle="modal" class="img-rounded imgSizeVideo" src="'.APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][3]['vImg'].'" />
+                                            </a>
+                                        </li>';
+                                } 
+                            ?>
+                        </ul>
+                        
+                        <ul class="thumbnails">
+                            <?php 
+                                if($this->arrayFinalView['eightPhoto'][4] != NULL){
+                                    echo '
+                                        <li class="span3">
+                                            <a class="thumbnail">
+                                                <img data-picName="'.$this->arrayFinalView['eightPhoto'][4]['vImg'].'" href="#modal_id" data-toggle="modal" class="img-rounded imgSizeVideo" src="'.APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][4]['vImg'].'" />
+                                            </a>
+                                        </li>';
+                                } 
+                            
+                                if($this->arrayFinalView['eightPhoto'][5] != NULL){
+                                    echo '
+                                        <li class="span3">
+                                            <a class="thumbnail">
+                                                <img data-picName="'.$this->arrayFinalView['eightPhoto'][5]['vImg'].'" href="#modal_id" data-toggle="modal" class="img-rounded imgSizeVideo" src="'.APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][5]['vImg'].'" />
+                                            </a>
+                                        </li>';
+                                } 
+                           
+                                if($this->arrayFinalView['eightPhoto'][6] != NULL){
+                                    echo '
+                                        <li class="span3">
+                                            <a class="thumbnail">
+                                                <img data-picName="'.$this->arrayFinalView['eightPhoto'][6]['vImg'].'" href="#modal_id" data-toggle="modal" class="img-rounded imgSizeVideo" src="'.APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][6]['vImg'].'" />
+                                            </a>
+                                        </li>';
+                                } 
+                            
+                                if($this->arrayFinalView['eightPhoto'][7] != NULL){
+                                    echo '
+                                        <li class="span3">
+                                            <a class="thumbnail">
+                                                <img data-picName="'.$this->arrayFinalView['eightPhoto'][7]['vImg'].'" href="#modal_id" data-toggle="modal" class="img-rounded imgSizeVideo" src="'.APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][7]['vImg'].'" />
+                                            </a>
+                                        </li>';
+                                } 
+                            ?>
+                        </ul>
+                    </div>
+                    <div class="span8 offset3">
+                        <a class="btn btn-primary span9" href="<?php echo APPLICATION_BASEURL; ?>/images">VIEW ALL PHOTOS</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row-fluid">
+                <div class="span12">
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+               
+
+    <div id="modal_id" class="modal hide fade" tabindex="1" role="dialog" aria-labelledby="modal_header_id" aria-hidden="true">
+        
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <div class="modal-body">
+            
+        </div>
+    </div>
+</div>

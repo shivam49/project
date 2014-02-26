@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="offset3">
+        
+    </div>
+    
+    <script>$.fn.editable.defaults.mode = 'inline';</script>
+    <div class="span6 offset3">
+        <div id="alert-error-success-id"></div>
+        <form id="form-market-id" action="<?php echo APPLICATION_BASEURL; ?>/backend/markets" >
+            <label>ADD NEW MARKET</label>
+            <input type="text" id="market-title-id" name="vTitle" placeholder="Title..." style="width: 70%"/>
+            <input class="btn btn-success" value="ADD" id="submit-title-market-id" style="width: 100px;margin-top: -10px"/>
+        </form>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        MARKET TITLES
+                    </th>
+                </tr>
+            </thead>
+            <tbody  id="table-market-list-id" >
+                
+            </tbody>
+            
+        </table>
+    </div>
+</div>
+
+
+<div id="deleteMarket" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="deleteMarketLabel">Warning</h3>
+    </div>
+    <div class="modal-body">
+    <p>Are you sure to delete this market?</p>
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">No</button>
+    <button class="btn btn-primary" id="delete-market-yes">Yes</button>
+    </div>
+</div>

@@ -1,0 +1,145 @@
+
+<!--<div class="span1">
+    
+</div>
+<div class="span10 page-back-all">
+    <div class="container-fluid">
+        <div class="span1 offset1"></div>
+        <div class="span12">
+            <div id="alert-login-faild"></div>
+        </div>
+        <div class="span1 offset1"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="span1">
+            
+        </div>
+        <div class="span10">
+            
+            
+            <div class="span8">
+                <div class="page-header">
+                    <h5>Login with facebook account</h5>
+                </div>
+                <div  style="text-align: center"><a href="<?php echo APPLICATION_BASEURL; ?>/login"  id="fbloginlink" ><img src="https://s3-us-west-1.amazonaws.com/fivefourclubimages/frontend/fb-login.jpg"></a></div>
+                <div class="page-header">
+                    <h5>Login with account</h5>
+                </div>
+                <form id="form-sub" action="<?php echo APPLICATION_BASEURL; ?>/login">
+                    <fieldset>
+                        <div class="row-fluid">
+                            <label>Email</label>
+                            <input type="text" name="vEmail" placeholder="Email..." style="width:95%;" >
+                            <label>Password</label>
+                            <input type="password" name="vPassword" placeholder="Password..." style="width:95%;">
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span3">
+                                <input type="button" value="Login" name="login-form" id="login-form" class="btn btn-success" />
+                            </div>
+                            <div class="span9">
+                                <input type="checkbox" name="remmber" value="remmber">&nbsp;Remember Me?<br>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="<?php echo APPLICATION_BASEURL; ?>/forget-password" >Forgot Password?</a>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="span2"></div>
+        </div>
+        <div class="span1">
+        </div>
+    </div>
+    
+</div>-->
+
+
+
+<html>
+    <head>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<!--        <script type="text/javascript">
+	$().ready(function() {
+		//alert('Jquery loaded');
+		$.backstretch("/library/home/assets/img/background.jpg");
+	});
+        </script>-->
+    </head>
+    
+    <body>
+        <div class="container-fluid">
+        <div class="span1 offset1"></div>
+        <div class="span12">
+            <div id="alert-login-faild"></div>
+        </div>
+        <div class="span1 offset1"></div>
+    </div>
+        <div class="darkyellow-login" style="background:#f59711; width:100%; height:150px; margin:0 auto; padding:0;">
+            <p class="loginfbt">Login Bands &amp; Fans</p>
+            <p class="loginfb">Use Facebook or your email to <font color="#000000">Login.</font></p>
+        </div>
+        
+        <div id="signupContent" style="height:350px;">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <div class="specialSignUp">
+                            
+                            <div class="row">
+                                <div class="span12">
+                                    <div class="span4">
+                                        <div class="fblogo">
+                                            <article id="signupTypesDialog" class="signupTypes lightbox open">
+                                                <section>
+                                                    <a href="<?php echo APPLICATION_BASEURL; ?>/login"  id="fbloginlink">
+                                                        <button class="facebook massive" data-provider="facebook" >
+                                                            <i class="facebook_170"></i><p>Facebook</p>
+                                                        </button>
+                                                    </a>
+                                                    <a href="#" style="display: none;">
+                                                        <button class="twitter massive" data-provider="twitter" style="margin-left:15px;"><i class="twitter_170"></i><p>Twitter</p>
+                                                        </button>
+                                                    </a>
+                                                </section>
+                                            </article>
+                                        </div>
+                                    </div>
+                                    <div class="span5">
+                                        <div class="loginform" style="float:left; height:200px; padding-top:20px;">
+                                            <form id="form-sub" action="<?php echo APPLICATION_BASEURL; ?>/login" method="post" autocomplete="off">
+                                                <p class="username  ">Email</p>
+                                                <input class="loginform" type="text" name="vEmail" placeholder="Email..." />
+
+                                                <p class="username">Password</p><br />
+                                                <input class="loginform" type="password" name="vPassword" placeholder="Password..." />
+
+                                                <a href="<?php echo APPLICATION_BASEURL; ?>/forget-password" class="forgotpass">Forgot Password</a>
+
+                                                <input name="remmber" value="remmber" type="checkbox"  id="checkbox-1-1" class="regular-checkbox" />
+                                                <label for="checkbox-1-1"></label>
+                                                <span class="rememberme"> Remember me?</span>
+
+                                                <div class="span3 signupBtns" style="margin:0;">
+                                                    <input style="float:left; margin:0; width:90px;" type="button" value="LOGIN" name="login-form" id="login-form" class="btn btn-inverse" />
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>

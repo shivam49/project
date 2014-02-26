@@ -1,0 +1,218 @@
+
+<style>
+    .jstree a {
+    color: #fff
+}
+</style>
+
+
+
+
+<!--show errors when click on tree-->
+<div class="pull-right notifile-errors" id="notifier-errors"></div>
+<div class="row-fluid">
+    <div class="span5">
+        <div class="row-fluid" style="margin-top: 5px">
+            <div class="span12" style="">
+                    <!--fileupload for audio-->
+                    <input type="file" name="file_upload" id="file_upload" />
+            </div>
+        </div>
+        <div>
+            <div class="container-fluid" style="margin-bottom: 5px">
+                <div class="span12">
+                    <!--buttons of tree-->
+                    <div id="mmenu" class="pull-left">
+                        <button class="btn btn-small btn-success" id="add_folder" value="add album">add album <i class="icon-folder-open icon-white"></i></button>
+                        <button id="rename" class="btn btn-small btn-primary" value="rename">rename <i class="icon-retweet icon-white"></i></button>
+                        <button id="remove" value="remove" class="btn btn-small btn-danger">remove <i class="icon-trash icon-white"></i></button>
+                    </div>
+                    <div class="pull-right">
+                        <!--button of refresh tree-->
+                        <div id="refresh-icon-id" class="btn btn-small btn-navbar" data-placement="bottom" data-toggle="tooltip" title="Refresh"  data-orginal-title="Refresh" onclick="$.get('audio/get-list-album', function () { $('#demo').jstree('refresh',-1); });">Refresh <i class="icon-refresh"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <!--create tree--> 
+                <div id="demo"></div>
+            </div>
+        </div>
+    </div>
+    <div class="span7">
+        
+        <div class="span12" id="show-audio-player-details">
+            <div class="span12" style="cursor: pointer"  id="fullScreen-player-id"></div>
+            <div class="span12">
+                    <!--show jplayer-->
+                    <div id="show-audio-player-id"></div>
+            </div>
+        </div>
+        <!--create details album in this div-->
+        <div id="show-album-details-id" ></div>
+        <!--create details tracks in this div-->
+        <div id="show-audio-details-id"></div>
+        <!--create edit details tracks in this div-->
+        <div id="show-edit-track-field" style="display: none">
+            <div>
+                <div class="tabbable"> <!-- Only required for left/right tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab-track1" data-toggle="tab">General</a></li>
+                        <li><a href="#tab-track2" data-toggle="tab">Upload ogg Track</a></li>
+                        <li><a href="#tab-track3" data-toggle="tab">Change mp3 Track</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab-track1">
+                            <div class="row-fluid">
+                                <div class="span12" >
+                                    <div class="span6">
+                                        <span><h6>Track Title</h6></span>
+                                        <input id="track-title-id"  type="text" placeholder="Track Title..." style="width: 90%">
+                                    </div>
+                                    <div class="span6">
+                                        <span><h6>Date Release</h6></span>
+                                        <div id="datetimepicker2" class="input-append" style="width: 90%">
+                                            <input id="date-release-track-id" data-format="yyyy-MM-dd"  type="text"  style="width: 90%"></input>
+                                            <span class="add-on">
+                                                <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--ogg tab contain upload file , error message, download link-->
+                        <div class="tab-pane" id="tab-track2">
+                            <input type="file" name="file_upload_ogg" id="file_upload_ogg" />
+                            <div id="show-error-upload-ogg"></div>
+                            <div class="span11">
+                                <div class="span6">
+                                    <i class="icon-question-sign pull-left help-icon-cls" ></i>
+                                    <h6 style="color: #999">you can upload ogg file for this track</h6>
+                                </div>
+                                <div class="span6" id="set-name-file-ogg"  style="display: none">
+                                    <div class="span9">
+                                        <i class="icon-file pull-left file-icon-cls"></i><h6 id="music-name-ogg-id">music_name.ogg</h6>
+                                    </div>
+                                    <div class="span3 pull-right">
+                                        <button class="btn btn-mini btn-inverse pull-right go-icon-cls" type="button"><a id="music-href-ogg-id" href="" style="text-decoration: none;color: #fff">GET <i class="icon-download-alt icon-white"></i></a></button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!--mp3 tab contain upload file , error message, download link-->
+                        <div class="tab-pane" id="tab-track3">
+                            <input type="file" name="file_upload_mp3" id="file_upload_mp3" />
+                            <div id="show-error-upload-mp3"></div>
+                            <div class="span11">
+                                <div class="span6">
+                                    <i class="icon-question-sign pull-left help-icon-cls"></i>
+                                    <h6 style="color: #999">you can change mp3 file is now play.</h6>
+                                </div>
+                                <div class="span6" id="set-name-file-mp3" style="display: none">
+                                    <div class="span9">
+                                        <i class="icon-file pull-left file-icon-cls"></i><h6 id="music-name-mp3-id">music_name.mp3</h6>
+                                    </div>
+                                    <div class="span3 pull-right">
+                                        <button class="btn btn-mini btn-inverse pull-right go-icon-cls" type="button"><a id="music-href-mp3-id" href="" style="text-decoration: none;color: #fff">GET <i class="icon-download-alt icon-white"></i></a></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div id="msg" class="pull-left"></div>
+                <input id="track-id" type="hidden"></input>
+                <button class="btn btn-small btn-success" id="done-edit-track-id">Done <i class="icon-ok-sign icon-white"></i></button>
+            </div>                
+        </div>
+        
+        <!--create edit details album in this div contain tab and edit form -->
+        <div id="edit-album"  style="display: none;margin-top: 5px">
+            <div>
+                <div class="tabbable"> <!-- Only required for left/right tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1" data-toggle="tab">General</a></li>
+                        <li><a href="#tab2" data-toggle="tab">Description</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab1">
+                            <div class="row-fluid">
+                                <div class="span5" style="cursor: pointer">
+                                    <img data-placement="left" data-toggle="tooltip" title="Click To Change Cover " class="image-album-cover-cls" src="" style="width: 100%;height: 150px" id="image-album-cover-id"/>
+                                </div>
+                                <div class="span7" >
+                                    <span><h6>Album Title</h6></span>
+                                    <input id="album-title-id"  type="text" placeholder="Album Title..." style="width: 90%">
+                                    <span><h6>Date Release</h6></span>
+                                    <div id="datetimepicker1" class="input-append" style="width: 90%">
+                                        <input id="date-release-album-id" data-format="yyyy-MM-dd"  type="text" style="width: 90%"></input>
+                                    <span class="add-on">
+                                        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div id="msg" class="pull-left"></div>
+                <button class="btn btn-small btn-success" id="done-edit-album-id">Done <i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </div>
+        <!--create cover change in this div-->
+        <div id="change-cover-modal" style="display: none;margin-top: 5px">
+            <div class="">
+                <div class="tabbable"> <!-- Only required for left/right tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab-cover1" data-toggle="tab">select cover from PC</a></li>
+                        <li><a href="#tab-cover2" data-toggle="tab">select cover from images list</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab-cover1">
+                            <div class="row-fluid">
+                                <input type="file" name="file_upload_cover" id="file_upload_cover" />
+                                <div id="show-up-cover-id">
+                                    <img id="img-show-up-cover-id" src="" class="image-show"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!--cover album content-->
+                        <div class="tab-pane" id="tab-cover2"></div>
+                    </div>  
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div id="set-upload-cover" class="pull-left">
+                    <img id="show-small-cover-album-id" src="" style="width: 50px;height: 50px" />
+                </div>
+                <button class="btn btn-small btn-success" id="done-change-cover-album-id" style="margin-top: 15px">Done <i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div id="delete-album-track-id" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h3 id="myModalLabel">Warning!</h3>
+</div>
+<div class="modal-body">
+<p>Are you sure you want to delete this row?</p>
+</div>
+<div class="modal-footer">
+<button class="btn" data-dismiss="modal" aria-hidden="true">No</button>
+<button class="btn btn-primary" id="delete-tree-done-id">Yes</button>
+</div>
+</div>

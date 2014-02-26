@@ -1,0 +1,83 @@
+
+
+
+
+
+
+            
+            <?php if($this->passwordProblem){ ?>
+                <div class="alert alert-block">
+                    <h4>Warning!</h4>
+                    Change Password Failed. Please Try Again Later.
+                </div>
+            <?php }if($this->passwordInvalidLink){ ?>
+                <div class="alert alert-error">
+                    <h4>Error!</h4>
+                    Change Password Failed.Invalid password confirmation link.
+                </div>
+            <?php } else{ ?>
+            
+
+
+
+
+
+
+
+
+
+
+<div class="span1">
+    
+</div>
+<div class="span10 page-back-all">
+    <div class="container-fluid">
+        <!--<div class="span1 offset1"></div>-->
+        <div class="span12">
+            <div id="alert-login-faild"></div>
+        </div>
+        <!--<div class="span1 offset1"></div>-->
+    </div>
+    <div class="container-fluid">
+        <div class="span1">
+            
+        </div>
+        <div class="span10 back-all-form">
+            <div class="span12 back-all-title-form">Change Password</div>
+            <div class="span2">
+                
+            </div>
+            <div class="span8">
+                
+                <form id="form-changepass" action="<?php echo APPLICATION_BASEURL; ?>/forget-password">
+                    <fieldset>
+                        <div class="row-fluid">
+                            <label>New Password</label>
+                            <input type="password" name="vPassword" placeholder="New Password..." style="width:95%;" >
+                            <label>Password Confirm</label>
+                            <input type="password" name="vPasswordConfirm" placeholder="Password Confirm..." style="width:95%;">
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span3">
+                                <input type="button" value="Change Password" name="login-form" id="login-form" class="btn btn-success" />
+                                <input type="hidden" name="memId" id="memId" value="<?php echo $this->memId ?>">
+                            </div>
+                            
+                        </div>
+                        
+                    </fieldset>
+                </form>
+            </div>
+            <div class="span2"></div>
+        </div>
+        <div class="span1">
+        </div>
+    </div>
+    
+</div>
+
+
+
+
+            <?php } ?>
+

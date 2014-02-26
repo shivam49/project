@@ -1,0 +1,130 @@
+<html>
+    <head>
+<!--        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400italic&v2' rel='stylesheet' type='text/css'>-->
+    </head>
+    <body>
+        <script>$.fn.editable.defaults.mode = 'inline';</script>
+<!--        <div data-count="<?php echo $this->count; ?>"></div>-->
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span8 offset2">
+                    <div class="row">
+                        <button id="add-btn-id" class="btn btn-primary"><span class="icon-plus icon-white"></span> ADD</button>
+<!--                        <div>-->
+                        <button id="reset-search-id" class="btn btn-block span3 hide pull-right"><span class="icon-refresh"></span> RESET SEARCH</button>
+                        <button id="search-btn-id" class="btn btn-primary span2 pull-right"><span class="icon-search icon-white"></span> SEARCH</button>
+<!--                        </div>-->
+                        
+                    </div>
+                    <div id="div-form-id" class="row" style="margin-top: 20px;" hidden="hidden">
+                        <form class="form-inline" method="post" action="<?php echo APPLICATION_BASEURL; ?>/backend/state/save-country" name="form-save" id="form-save-id">
+                            <input type="text" name="vName" placeholder="Country Name" required/>
+                            <input type="text" name="vName_little" placeholder="Name Little" />
+                            <select name="eStatus">
+                                <option>Active</option>
+                                <option>Inactive</option>
+                            </select>
+                            <div style="margin-top: 10px;">
+                                <button type="submit" class="btn" name="submit">submit</button>
+                                <button type="reset" class="btn" value="reset" name="reset">close</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row" style="margin-top: 20px;">
+                        <table style="center" class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <td><h6>Name</h6></td>
+                                    <td><h6>Name Little</h6></td>
+                                    <td><h6>Status</h6></td>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="span12">
+<!--                            <div class="bs-docs-example">-->
+                            <p class="demo demo2" hidden="hidden"></p>
+                            <p class="demo demo3" hidden="hidden"></p>
+<!--                            </div>-->
+                        </div>
+                    </div>
+<!--                    <div id="paging-plugin-id" hidden="hidden">
+                        <div id="pagination">
+                            <a class="control" id="max_backward" hidden="hidden"></a>
+                            <a class="control" id="over_backward" hidden="hidden"></a>
+                            <div class='paginator_p_wrap'>
+                                <div class='paginator_p_bloc'>
+                                </div>
+                            </div>
+                            <a class="control" id="over_forward" hidden="hidden"></a>
+                            <a class="control" id="max_forward" hidden="hidden"></a>
+                            <div class='paginator_slider' class='ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all'> 
+                                <a class='ui-slider-handle ui-state-default ui-corner-all' href='#'></a> 
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div id="modal-delete-state-id" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="deleteStateLabel">Warning</h3>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure to delete this State?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">No</button>
+                <button class="btn btn-primary" id="delete-state-yes-id">Yes</button>
+            </div>
+        </div>
+        
+        <div id="modal-search-id" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h5 id="myModalLabel">Search State</h5>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" method="post" action="<?php echo APPLICATION_BASEURL; ?>/backend/state/load-state" name="form-search" id="form-search-id">
+                    <div class="control-group">
+                        <label class="control-label" for="inputNameId">Name:</label>
+                        <div class="controls">
+                            <input id="inputNameId" type="text" name="vName" placeholder="State Name"/>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label class="control-label" for="inputLittleId">Name Little</label>
+                        <div class="controls">
+                            <input id="inputLittleId" type="text" name="vName_little" placeholder="Name Little" />
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label class="control-label" for="inputStatusId">Status</label>
+                        <div class="controls">
+                            <select id="inputStatusId" name="eStatus">
+                                <option>Active</option>
+                                <option>Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <div class="controls">
+                            <button id="btn-submit-search-id" type="submit" class="btn btn-success" name="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+
+

@@ -1,0 +1,269 @@
+<div class="row">
+    <div class="span5">
+            <div class="hide" id="hidden_block_vote_id">
+                <div class="alert alert-block" id="alert_block_vote_id">
+                    <h4>Warning!</h4>
+                    Best check yo self, you're not...
+                </div>
+            </div>
+            <div class="hide" id="hidden_success_vote_id">
+                <div class="alert alert-success" id="alert_success_vote_id">
+                    <h4>success!</h4>
+                    Best check yo self, you're not...
+                </div>
+            </div>
+        </div>
+</div>
+<div data-login="<?php print $this->login ?>" data-idProfile="" id="<?php print $this->idProfile ?>"></div>
+<div id="bandContent">
+<div class="container">
+  <div class="row">
+	  <div class="span4">
+		<h2><?php print $this->arrayFinalView['bandName']; ?></h2>
+		<img src="<?php echo APPLICATION_BASEURL; ?>/public/uploaded_resource/frontend/member/profile-image/<?php print $this->arrayFinalView['picProfile']; ?>" alt="TEMP-band-video" width="356" height="299" />
+	  </div>
+	  <div class="span8" style="width:529px; margin:54px 0 0 48px;">
+		<h2>
+                    <button style="width: 529px;" id="btn_add_vote_id" data-trigger="hover"  class="btn btn-primary" value="addVote">VOTE</button>
+                </h2>
+
+		<table class="playTable">
+                    <?php if(!empty($this->arrayFinalView['tracks'])){ foreach ($this->arrayFinalView['tracks'] as $key => $value) { ?>
+                        <tr>
+                            <td>
+                                <p class="titlep"><?php print $value['vTitle']  ?></p>
+                            </td>
+                            <td>
+                                <img src="<?php print APPLICATION_BASEURL .'/public/skins/frontend/default/images/img/fb_tweet.png' ?>" alt="fbt" />
+                            </td>
+                            <td>
+                                <i class="icon-music icon-white"></i> <?php print $value['iClick'] ?>
+                            </td>
+                            <td>
+                                <img data-play="" id="playeBtn_<?php print $value['iId']; ?>" <?php print 'playe_buttom_'.$value['iId']; ?> src="<?php print APPLICATION_BASEURL .'/public/skins/frontend/default/images/img/white_arrow.png' ?>" alt="play"  onclick="play_audio(<?php print $value['iId']; ?>)"/>
+                                
+                                <?php // fb(); ?>
+                                
+                                
+                                <audio id="<?php print 'player_'.$value['iId']; ?>">
+                                    <source src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/band-'.$value['iBand_id'].'/audio/'.$value['vFile_mp3']; ?>" />
+                                    <?php if($value['vFile_ogg']!=''){ ?>
+                                        <source src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/band-'.$value['iBand_id'].'/audio/'.$value['vFile_ogg']; ?>" />
+                                    <?php } ?>
+                                </audio>
+                            </td>
+                            
+                        </tr>
+                        <tr style="height:2px;"></tr>
+                    <?php }} ?>
+				
+			</tr>
+		</table>
+	  </div><!--/.span5 -->
+  </div><!-- /.row -->
+</div><!-- /.container -->
+</div>
+
+
+<div id="votingContent" style="background:#333;">
+	<div class="container">
+		<div class="row">
+                    <div class="span12">
+                            <h2 class="headline" style="text-align:center; font-size:30px; margin-top:5px;"><?php print $this->arrayFinalView['bandName']; ?> From <?php echo $this->arrayFinalView['location'] ?></h2>
+                    </div>
+		</div><!-- /.row -->
+		
+		<div class="row-fluid">
+			
+                    <div class="span6" style="float:left; margin-top:15px;">
+			  
+                        <div class="tab-body1" style="float:right;">
+                            <!--<p>23932</p>-->
+                            <p><?php if($this->arrayFinalView['overallVotes']){echo $this->arrayFinalView['overallVotes']; }else{echo '0';} ?></p>
+                            <p><?php if($this->arrayFinalView['fanOfBand']){echo $this->arrayFinalView['fanOfBand']; }else{echo '0';} ?></p>
+                            <p><?php if($this->arrayFinalView['track']){echo $this->arrayFinalView['track']; }else{echo '0';} ?></p>
+                        </div>
+                        <div class="tab-body" style="float:right;">
+                            <!--<p>Votes this Round:</p>-->
+                            <p>Overall Votes:</p>
+                            <p>Fan:</p>
+                            <p>Total Plays:</p>
+                        </div>
+                    </div>
+                    <div class="vrow"></div>
+			
+            
+                    <div class="span6" style="float:left; margin-top:15px;">
+                        <div class="tab-body" style="float:left;">
+                            <p>Location:</p>
+                            <p>Market:</p>
+                            <p>Genre:</p>
+                            <p>Members:</p>
+                        </div>
+                        <div class="tab-body1" style="float:left; width:160px;">
+                            <p><?php if($this->arrayFinalView['location']){echo $this->arrayFinalView['location']; }else{echo '-'; } ?></p>
+                            <p><?php if($this->arrayFinalView['market']){echo $this->arrayFinalView['market']; }else{echo '-'; } ?></p>
+                            <p><?php if($this->arrayFinalView['genres']){echo $this->arrayFinalView['genres']; }else{echo '-';} ?></p>
+                            <p><?php if($this->arrayFinalView['members']){echo $this->arrayFinalView['members'];}else{echo '0';} ?></p>
+                        </div>
+                    </div>
+			
+		</div><!-- /.row -->
+
+                <div style="margin:10px auto; width:506px;">
+                    <a href="#"><img src="<?php print APPLICATION_BASEURL .'/public/skins/frontend/default/images/img/link_icon.png'?>" alt="link" /></a>
+                    <a href="#"><img src="<?php print APPLICATION_BASEURL .'/public/skins/frontend/default/images/img/fb_icon.png'?>" alt="fb" /></a>
+                    <a href="#"><img src="<?php print APPLICATION_BASEURL .'/public/skins/frontend/default/images/img/tweet_icon.png'?>" alt="twe" /></a>
+                    <a href="#"><img src="<?php print APPLICATION_BASEURL .'/public/skins/frontend/default/images/img/photo_icon.png'?>" alt="pho" /></a>
+                    <a href="#"> <img src="<?php print APPLICATION_BASEURL .'/public/skins/frontend/default/images/img/read_icon.png'?>" alt="read" /></a>
+                    <a href="#"><img src="<?php print APPLICATION_BASEURL .'/public/skins/frontend/default/images/img/cloud_icon.png'?>" alt="cloud" style="margin-top:10px;" /></a>
+                </div>
+		
+	</div><!-- /.row -->
+
+  </div><!-- /.container -->
+</div><!-- /#votingContent -->
+
+<?php if(!empty($this->arrayFinalView['eightVideo'][0])){ ?>
+<div id="votingContent">
+	<div class="container">
+		<div class="row">
+			<div class="span12" style="margin:0 0 0 40px;">
+				<h2 class="headline" style="text-align:center; font-size:35px; margin-top:20px;"><?php print $this->arrayFinalView['bandName']; ?> Videos</h2>
+			</div>
+		</div><!-- /.row -->
+		
+		<div class="row-fluid">
+			
+			<div class="span6" style="width:100%; margin:0 auto;">
+                            
+                            <?php if($this->arrayFinalView['eightVideo'][0][0] != NULL){ ?>
+                                <span class="bandProfile1" style="float:left; margin:0 5px 0 55px;width:250px;">
+                                    <img src="<?php print $this->arrayFinalView['eightVideo'][0][0]['tVideo_image']; ?>" alt="video" class="imgvid" style="margin:0;"/>
+                                    <p><?php print $this->arrayFinalView['eightVideo'][0][0]['vVideo_title']; ?></p>
+                                </span>
+                            <?php }if($this->arrayFinalView['eightVideo'][0][1] != NULL){ ?>
+                                <span class="bandProfile1" style="float:left;margin:0 5px 0 5px;width:250px;">
+                                    <img src="<?php print $this->arrayFinalView['eightVideo'][0][1]['tVideo_image']; ?>" alt="video" class="imgvid" style="margin:0;" />
+                                    <p><?php print $this->arrayFinalView['eightVideo'][0][1]['vVideo_title']; ?></p>
+                                </span>
+                            <?php }if($this->arrayFinalView['eightVideo'][0][2] != NULL){ ?>
+                                <span class="bandProfile1" style="float:left;margin:0 5px 0 5px;width:250px;">
+                                    <img src="<?php print $this->arrayFinalView['eightVideo'][0][2]['tVideo_image']; ?>" alt="video" class="imgvid"  style="margin:0;"/>
+                                    <p><?php print $this->arrayFinalView['eightVideo'][0][2]['vVideo_title']; ?></p>
+                                </span>
+                            <?php }if($this->arrayFinalView['eightVideo'][0][3] != NULL){ ?>
+                                <span class="bandProfile1" style="float:left;margin:0 5px 0 5px;width:250px;">
+                                    <img src="<?php print $this->arrayFinalView['eightVideo'][0][3]['tVideo_image']; ?>" alt="video" class="imgvid" style="margin:0;" />
+                                    <p><?php print $this->arrayFinalView['eightVideo'][0][3]['vVideo_title']; ?></p>
+                                </span>
+                            <?php } ?>
+			</div>
+
+
+
+			<div class="span6" style="width:100%; margin:0 auto;">
+                            <?php if($this->arrayFinalView['eightVideo'][0][4] != NULL){ ?>
+                                <span class="bandProfile1" style="float:left; margin:0 5px 0 55px;width:250px;">
+                                    <img src="<?php print $this->arrayFinalView['eightVideo'][0][4]['tVideo_image']; ?>" alt="video" class="imgvid" style="margin:0;"/>
+                                    <p><?php print $this->arrayFinalView['eightVideo'][0][4]['vVideo_title']; ?></p>
+                                </span>
+                            <?php }if($this->arrayFinalView['eightVideo'][0][5] != NULL){ ?>
+                                <span class="bandProfile1" style="float:left;margin:0 5px 0 5px;width:250px;">
+                                    <img src="<?php print $this->arrayFinalView['eightVideo'][0][5]['tVideo_image']; ?>" alt="video" class="imgvid" style="margin:0;" />
+                                    <p><?php print $this->arrayFinalView['eightVideo'][0][5]['vVideo_title']; ?></p>
+                                </span>
+                            <?php }if($this->arrayFinalView['eightVideo'][0][6] != NULL){ ?>
+                                <span class="bandProfile1" style="float:left;margin:0 5px 0 5px;width:250px;">
+                                    <img src="<?php print $this->arrayFinalView['eightVideo'][0][6]['tVideo_image']; ?>" alt="video" class="imgvid"  style="margin:0;"/>
+                                    <p><?php print $this->arrayFinalView['eightVideo'][0][6]['vVideo_title']; ?></p>
+                                </span>
+                            <?php }if($this->arrayFinalView['eightVideo'][0][7] != NULL){ ?>
+                                <span class="bandProfile1" style="float:left;margin:0 5px 0 5px;width:250px;">
+                                    <img src="<?php print $this->arrayFinalView['eightVideo'][0][7]['tVideo_image']; ?>" alt="video" class="imgvid" style="margin:0;" />
+                                    <p><?php print $this->arrayFinalView['eightVideo'][0][7]['vVideo_title']; ?></p>
+                                </span>
+                            <?php } ?>
+			</div>
+			
+		</div><!-- /.row -->
+		<?php if($this->arrayFinalView['eightVideo'][1] > 8){ ?>
+		<div class="viewall"><a href="<?php echo APPLICATION_BASEURL; ?>/movies" class="">VIEW ALL VIDEOS</a></div>
+                <?php } ?>
+	</div><!-- /.row -->
+  </div><!-- /.container -->
+  <?php  } ?>
+</div><!-- /#votingContent -->
+
+
+<?php if(!empty($this->arrayFinalView['eightPhoto'][0])){ ?>
+<div id="votingContent" style="background:#171c23;">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<h2 class="headline" style="text-align:center; font-size:30px; margin-top:20px;"><?php print $this->arrayFinalView['bandName']; ?> Photos</h2>
+			</div>
+		</div><!-- /.row -->
+		
+		<div class="row-fluid">
+                    
+                    <div class="span6" style="width:100%; margin:0 auto;">
+                        <?php  if($this->arrayFinalView['eightPhoto'][0][0] != NULL){ ?>
+                            <span class="bandProfile1" style="float:left; margin:0 5px 15px 55px;width:201px;">
+                                <img src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][0][0]['vImg'] ?>" alt="video" class="imgvid" style="margin:0;"/>
+                            </span>
+                        <?php }if($this->arrayFinalView['eightPhoto'][0][1] != NULL){ ?>
+                            <span class="bandProfile1" style="float:left;margin:0 5px 15px 5px;width:201px;">
+                                <img src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][0][1]['vImg'] ?>" alt="video" class="imgvid" style="margin:0;" />
+                            </span>
+                        <?php }if($this->arrayFinalView['eightPhoto'][0][2] != NULL){ ?>
+                            <span class="bandProfile1" style="float:left;margin:0 5px 15px 5px;width:201px;">
+                                <img src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][0][2]['vImg'] ?>" alt="video" class="imgvid"  style="margin:0;"/>
+                            </span>
+                        <?php }if($this->arrayFinalView['eightPhoto'][0][3] != NULL){ ?>
+                            <span class="bandProfile1" style="float:left;margin:0 5px 15px 5px;width:201px;">
+                                  <img src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][0][3]['vImg'] ?>" alt="video" class="imgvid" style="margin:0;" />
+                            </span>
+                        <?php }if($this->arrayFinalView['eightPhoto'][0][4] != NULL){ ?>
+                            <span class="bandProfile1" style="float:left;margin:0 5px 15px 5px;width:201px;">
+                                  <img src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][0][4]['vImg'] ?>" alt="video" class="imgvid" style="margin:0;" />
+                            </span>
+                        <?php } ?>
+                    </div>
+
+
+                    <div class="span6" style="width:100%; margin:0 auto;">
+                        <?php if($this->arrayFinalView['eightPhoto'][0][5] != NULL){ ?>
+                            <span class="bandProfile1" style="float:left; margin:0 5px 0 55px;width:201px;">
+                                        <img src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][0][5]['vImg'] ?>" alt="video" class="imgvid" style="margin:0;"/>
+                            </span>
+                        <?php }if($this->arrayFinalView['eightPhoto'][0][6] != NULL){ ?>
+                            <span class="bandProfile1" style="float:left;margin:0 5px 0 5px;width:201px;">
+                                        <img src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][0][6]['vImg'] ?>" alt="video" class="imgvid" style="margin:0;" />
+                            </span>
+                        <?php }if($this->arrayFinalView['eightPhoto'][0][7] != NULL){ ?>
+                            <span class="bandProfile1" style="float:left;margin:0 5px 0 5px;width:201px;">
+                                        <img src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][0][7]['vImg'] ?>" alt="video" class="imgvid"  style="margin:0;"/>
+                            </span>
+                        <?php }if($this->arrayFinalView['eightPhoto'][0][8] != NULL){ ?>
+                            <span class="bandProfile1" style="float:left;margin:0 5px 0 5px;width:201px;">
+                                        <img src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][0][8]['vImg'] ?>" alt="video" class="imgvid" style="margin:0;" />
+                            </span>
+                        <?php }if($this->arrayFinalView['eightPhoto'][0][9] != NULL){ ?>
+                            <span class="bandProfile1" style="float:left;margin:0 5px 0 5px;width:201px;">
+                                        <img src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/member/profile-image/'.$this->arrayFinalView['eightPhoto'][0][9]['vImg'] ?>" alt="video" class="imgvid" style="margin:0;" />
+                            </span>
+                        <?php } ?>
+                    </div>
+              
+
+			
+		</div><!-- /.row -->
+		<?php if($this->arrayFinalView['eightPhoto'][1]>10){ ?>
+		<div class="viewall"><a href="<?php echo APPLICATION_BASEURL; ?>/images" class="">VIEW ALL PHOTOS</a></div>
+                <?php } ?>
+	</div><!-- /.row -->
+  </div><!-- /.container -->
+  <?php } ?>
+</div><!-- /#votingContent -->
+

@@ -1,0 +1,136 @@
+<!--<div class="row-fluid">
+    <input type="file" name="file_upload" id="file_upload" />
+</div>
+
+
+<div class="container-fluid">
+    <div id="view_body_id" class="row-fluid">
+        <ul id="ul_view_pic_id" class="thumbnails">
+            
+        </ul>
+    </div>
+</div>-->
+
+<div data-login="<?php echo $this->status; ?>" id="data-login-id"></div>
+
+<div class="darkyellow-login" style="background:#132f4e; width:100%; height:130px; margin:0 auto; padding:0;">
+    <p class="loginfbt">Photos</p>
+    <?php
+        if($this->loggedUser != FALSE){
+            echo '
+                    <p class="loginfb">Press Photos and more!</p>
+                ';
+        }
+    ?>
+</div>
+
+<div id="photoContent" style="background:#03182e !important;">
+    <div class="container">
+        <div class="span12">
+            <?php fb($this->loggedUser);
+                if($this->loggedUser != FALSE){
+                    echo '
+                        <div class="row">
+                            <div class="span5 offset3">
+                                <input type="file" name="file_upload" id="file_upload" />
+                            </div>
+                        </div>
+                        ';
+                }
+            ?>
+            
+            <div class="row">
+                <div class="span12">
+                    <div class="allimages">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br /><br />
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="modal_pic_id" class="modal hide fade" tabindex="1" role="dialog" aria-labelledby="modal_header_id" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <ul class="unstyled inline" style="display:inline">
+            <li>
+                <img id="pic_header_id" style="height: 100px; width: 100px;" />
+            </li>
+            <li>    
+                <h5 id="title_band_id" style="color: #2d5097;"></h5>
+<!--                <h6 id="date_create_id" style="color: #aaaaaa;"></h6>-->
+            </li>
+        </ul>
+    </div>
+    
+    <div id="modal_body_id" class="modal-body">
+        <div class="row-fluid">
+            <?php
+                if($this->loggedUser != FALSE){
+                    echo '
+                            <div class="span7">
+                                <img class="img-rounded" id="img_body_id" />
+                            </div>
+                        ';
+                }  else {
+                    echo '
+                            <img style="height: 400px; width: 600px;" class="img-rounded" id="img_body_id" />
+                        ';
+                }
+            ?>
+            
+            <?php
+                if($this->loggedUser != FALSE){
+                    echo '
+                            <div class="span5">
+                                <div class="row-fluid">
+                                    <button class="btn btn-info span10" id="btn_set_pic_id" onclick="setAsProfile()"> set as profile pic </button>
+                                </div>
+                                <br />
+                                <div class="row-fluid footerModal">
+                                    <div class="text-left" id="footer_desc_id">
+                                        <div class="edit_area">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ';
+                }
+            ?>
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+<!--        <div class="span8">
+            <img class="img-rounded" id="img_body_id" />
+            
+        </div>
+        <button class="btn btn-info span4" id="btn_set_pic_id" onclick="setAsProfile()"> set as profile pic </button>
+        <div class="text-left" id="footer_desc_id">
+            <div class="edit_area">
+            </div>
+        </div>-->
+    </div>
+    <span id="date_create_edti_id" style="margin-left: 10px; color: #707070;"></span>
+    
+<!--    <div class="modal-footer footerModal">
+        
+    </div>-->
+</div>

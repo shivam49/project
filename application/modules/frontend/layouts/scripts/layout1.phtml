@@ -1,0 +1,26 @@
+<?php
+echo '<?xml version="1.0" encoding="UTF-8" ?>';
+echo $this->doctype();
+?>
+<html>
+    <head>
+        <script type="text/javascript">
+            var $projectExecPath = '<?php echo APPLICATION_BASEURL; ?>';
+            var $AppVarSID = '<?php echo $this->currentSessionId; ?>';
+            var $secureAppVarSID = '<?php echo $this->currentSessionIdSecurity; ?>';
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="shortcut icon" href="<?php echo APPLICATION_BASEURL; ?>/public/skins/frontend/default/images/fav/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="<?php echo APPLICATION_BASEURL; ?>/public/skins/frontend/default/images/fav/favicon.ico" type="image/x-icon">
+        <?php
+        echo $this->headTitle();
+        $this->loadSkin($this->frontendSkin, $this->currentPageDetails['currentPageFilename']);
+        echo $this->headLink();
+        echo $this->headScript();
+        ?>
+    </head>
+
+    <body>
+        <?php print $this->layout()->content; ?>
+    </body>
+</html>

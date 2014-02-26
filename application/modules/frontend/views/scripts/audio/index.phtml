@@ -1,0 +1,63 @@
+<html>
+    <body>
+        <div class="container-fluid">
+            <div class="row-fluid" style="margin-top: 25px; margin-bottom: -15px;">
+                <div class="span6">
+                    <div class="hero-unit">
+                        <fieldset>
+                            <legend>Music Management</legend>
+                            <div>
+                                <input type="file" name="file_upload" id="file_upload" />
+                            </div>
+
+                            <div style="margin-top: 20px;">
+                                <table class="table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <td class="fontcolor">MUSIC TITLE</td>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="tBody-table-id">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div id="manage-hero-unit-id" class="hero-unit" style="display: none;">
+                        <div>
+                            <form method="post" action="<?php echo APPLICATION_BASEURL; ?>/audio/change-title" name="form-change-title" id="change-title-id">
+                                <fieldset>
+                                    <legend>Edit Music</legend>
+                                    <div>
+                                        <label>Title</label>
+                                        <input style="margin-top: 10px;" type="text" name="vTitle" />
+                                        <input type="text" name="iId" style="display: none" />
+                                        <button id="sub_btn_id" type="submit" class="btn btn-primary" name="submit">SAVE</button>
+                                        <button type="reset" class="btn btn-warning" value="reset" name="reset">CLOSE</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="deleteMusicModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 id="deleteMusicLabel">Warning</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure to delete this Music?</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">No</button>
+                    <button class="btn btn-primary" id="delete-music-yes">Yes</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

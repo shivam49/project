@@ -1,0 +1,70 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+echo '<?xml version="1.0" encoding="UTF-8" ?>';
+echo $this->doctype();
+?>
+<html>
+    <head>
+        <script type="text/javascript">
+            var $projectExecPath = '<?php echo APPLICATION_BASEURL; ?>';
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <?php
+            echo $this->headTitle();
+            $this->loadSkin($this->backendSkin, $this->currentPageDetails['currentPageFilename']);
+            echo $this->headLink();
+            echo $this->headScript();
+        ?>
+    </head>
+
+    <body>
+
+
+		        
+<!--        <div class="container-fluid">-->
+            <div class="row-fluid">
+                <nav class="navbar navbar-inverse">
+                    <div class="navbar-inner">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a href="<?php echo APPLICATION_BASEURL; ?>" class="brand">Uproar Festival Battle of the Bands</a>
+                        <div class="nav-collapse">
+                            <ul class="nav pull-right">
+                                <li><a href="<?php echo APPLICATION_BASEURL ?>/backend/genres">GENRES</a></li>
+                                <li><a href="<?php echo APPLICATION_BASEURL ?>/backend/fans">FANS</a></li>
+                                <li><a href="<?php echo APPLICATION_BASEURL ?>/backend/bands">BANDS</a></li>
+                                
+                                <li><a href="<?php echo APPLICATION_BASEURL ?>/backend/markets">MARKETS</a></li>
+								<li><a href="<?php echo APPLICATION_BASEURL ?>/backend/state">STATE</a></li>
+                                <li><a href="<?php echo APPLICATION_BASEURL ?>/backend/exit">Exit</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+<!--        </div>-->
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <?php print $this->layout()->content; ?>
+                </div>
+            </div>
+            
+        </div>
+
+	</body
+</html>

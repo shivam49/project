@@ -1,0 +1,433 @@
+<div id="bandContent">
+    
+    <div class="container">
+        
+        <div class="row">
+            
+            <div class="span4">
+                
+		<h2 class="homeH2header">Featured Band</h2>
+                <?php
+                    
+                    if($this->arrayFinalHomeView['featuredBands'] != 'noFeatured'){
+                        $count= count($this->arrayFinalHomeView['featuredBands']);
+                    ?>
+                            <div id="myCarouselHome" class="carousel slide">
+                                <ol class="carousel-indicators">
+                    <?php
+                                foreach ($this->arrayFinalHomeView['featuredBands'] as $key=>$value){
+                                    if($key == 0){
+                    ?>
+                                        <li data-target="#myCarouselHome" data-slide-to="<?php print $key; ?>" class="active"></li>
+                    <?php
+                                    }  else {
+                    ?>
+                                        <li data-target="#myCarouselHome" data-slide-to="<?php print $key; ?>"></li>
+                    <?php
+                                    }
+                                }
+                    ?>
+                                </ol>
+                                <div class="carousel-inner">
+                    <?php
+//                    fb($this->arrayFinalHomeView['featuredBands']);
+                                foreach ($this->arrayFinalHomeView['featuredBands'] as $key=>$value){
+                                    if($key == 0){
+                    ?>
+                                        <div class="active item">
+                                            <a href="<?php print APPLICATION_BASEURL.'/profile/band/id/'.$this->arrayFinalHomeView['featuredBands'][$key]['iMember_id']; ?>">
+                                                <img src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/band/image/'.$this->arrayFinalHomeView['featuredBands'][$key]['vImg']; ?>" style="width: 366px; height: 265px;" />
+                                            </a>
+                                            <div id="div_featue_footer_id" style="width: 366px; height: 60px; background-color: #F4F4F4;">
+                                                <div class="row">
+                                                    
+                                                    <div class="span1">
+                                                       <?php fb($value['lastRelease']); if($this->arrayFinalHomeView['featuredBands'][$key]['lastRelease']!= null){ ?>
+                                                        <img data-play-fu="" id="playeBtnFu_<?php print $value['lastRelease']['iId']; ?>" src="<?php print APPLICATION_BASEURL.'/library/home/assets/img/fu-play.png' ;?>" width="40px;" height="40px;" style="margin-top:10px;margin-left: 10px; padding-right: 10px; border-right: 1px solid #999" onclick="play_audioFu(<?php print $value['lastRelease']['iId']; ?>)""/>
+<!--                                                        <img src="<?php // print APPLICATION_BASEURL.'/library/home/assets/img/vbar.gif' ; ?>"  style="margin-top:10px; margin-left: 5px;" />-->
+                                                        <?php } ?>
+                                                    </div>
+                                                    
+                                                    <div class="span2">
+                                                        <h6 style="color: #A6A6A6;"><?php print $this->arrayFinalHomeView['featuredBands'][$key]['songTitle']; ?></h6>
+                                                        <h6 style="color: #A6A6A6"><?php print $this->arrayFinalHomeView['featuredBands'][$key]['vTitle']; ?></h6>
+                                                        <h6 style="color: #A6A6A6"><?php print $this->arrayFinalHomeView['featuredBands'][$key]['location']; ?></h6>
+                                                    </div>
+                                                    
+                                                    <div>
+                                                        
+<!--                                                        <img src="<?php // print APPLICATION_BASEURL.'/library/home/assets/img/vbar.gif'; ?>" style="margin-top:10px; margin-left: 20px;" />-->
+<!--                                                        <img src="<?php // print APPLICATION_BASEURL.'/library/home/assets/img/fu-forward.png' ; ?>" width="40px;" height="40px;" style="margin-top:10px; margin-left: 10px;"/>-->
+                                                        <img src="<?php print APPLICATION_BASEURL.'/library/home/assets/img/fu-forward.png' ; ?>" width="40px;" height="40px;" style="margin-top:10px;float: right;margin-right: 10px; padding-left: 10px; border-left: 1px solid #999"/>
+                                                    </div>
+                                                    <?php if($this->arrayFinalHomeView['featuredBands'][$key]['lastRelease']!= null){  ?>
+                                                    <audio id="<?php print 'playerFu_'.$value['lastRelease']['iId']; ?>">
+                                                        <source src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/band/music/'.$value['lastRelease']['vFile_mp3']; ?>" />
+                                                        <?php if($value['vFile_ogg']!=''){ ?>
+                                                            <source src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/band/music/'.$value['lastRelease']['vFile_ogg']; ?>" />
+                                                        <?php } ?>
+                                                    </audio>
+                                                    
+                                                <?php } ?>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                <?php
+                                    } else {
+                ?>
+                                        <div class="item">
+                                            <a href="<?php print APPLICATION_BASEURL.'/profile/band/id/'.$this->arrayFinalHomeView['featuredBands'][$key]['iMember_id']; ?>">
+                                                <img src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/band/image/'.$this->arrayFinalHomeView['featuredBands'][$key]['vImg']; ?>" style="width: 366px; height: 265px;" />
+                                            </a>
+                                            <div id="div_featue_footer_id" style="width: 366px; height: 60px; background-color: #F4F4F4;">
+                                                <div class="row">
+                                                    <div class="span1">
+                                                        <?php if($this->arrayFinalHomeView['featuredBands'][$key]['lastRelease']!= null){ ?>
+                                                        <img data-play-fu="" id="playeBtnFu_<?php print $value['lastRelease']['iId']; ?>" src="<?php print APPLICATION_BASEURL.'/library/home/assets/img/fu-play.png' ;?>" width="40px;" height="40px;" style="margin-top:10px;margin-left: 10px; padding-right: 10px; border-right: 1px solid #999" onclick="play_audioFu(<?php print $value['lastRelease']['iId']; ?>)""/>
+<!--                                                        <img src="<?php // print APPLICATION_BASEURL.'/library/home/assets/img/vbar.gif' ; ?>"  style="margin-top:10px; margin-left: 5px;" />-->
+                                                        <?php } ?>
+                                                    </div>
+                                                    <div class="span2">
+                                                        <h6 style="color: #A6A6A6"><?php print $this->arrayFinalHomeView['featuredBands'][$key]['songTitle']; ?></h6>
+                                                        <h6 style="color: #A6A6A6"><?php print $this->arrayFinalHomeView['featuredBands'][$key]['vTitle']; ?></h6>
+                                                        <h6 style="color: #A6A6A6"><?php print $this->arrayFinalHomeView['featuredBands'][$key]['location']; ?></h6>
+                                                    </div>
+                                                    <div>
+<!--                                                        <img src="<?php // print APPLICATION_BASEURL.'/library/home/assets/img/vbar.gif' ; ?>" style="margin-top:10px; margin-left: 20px;" />-->
+                                                        <img src="<?php print APPLICATION_BASEURL.'/library/home/assets/img/fu-forward.png' ; ?>" width="40px;" height="40px;" style="margin-top:10px;float: right;margin-right: 10px; padding-left: 10px; border-left: 1px solid #999"/>
+                                                    </div>
+                                                    <?php 
+//                                                    fb($value['lastRelease']); 
+                                                    if($this->arrayFinalHomeView['featuredBands'][$key]['lastRelease']!= null){ ?>
+                                                    
+                                                    <audio id="<?php print 'playerFu_'.$value['lastRelease']['iId']; ?>">
+                                                        <source src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/band/music/'.$value['lastRelease']['vFile_mp3']; ?>" />
+                                                        <?php if($value['vFile_ogg']!=''){ ?>
+                                                            <source src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/band/music/'.$value['lastRelease']['vFile_ogg']; ?>" />
+                                                        <?php } ?>
+                                                    </audio>
+                                                    
+                                                <?php } ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                <?php
+                                        }
+                                    }
+                ?>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                <?php 
+                                    if($count>1){
+                ?>
+                                        <a class="carousel-control left" href="#myCarouselHome" data-slide="prev">
+                                            <img src="<?php print APPLICATION_BASEURL.'/library/home/assets/img/carousel-arrow-left.png' ; ?>" alt="carousel-arrow-left"/>
+                                        </a>
+                                        <a class="carousel-control right" href="#myCarouselHome" data-slide="next">
+                                            <img style="margin-right: 30px;" src="<?php print APPLICATION_BASEURL.'/library/home/assets/img/carousel-arrow-right.png'; ?>" alt="carousel-arrow-right"/>
+                                        </a>
+                <?php
+                                    }
+                ?>
+                               </div>
+                <?php
+                        }else {
+                ?>
+                            <div class="text-center" style="width: 366px; height: 250px; background-color: #D9D9D9;"><h3>NO FEATURED</h3></div>
+                <?php
+                        }
+                ?>
+                    </div>
+            
+                    <div class="span8">
+                        <h2 class="homeH2header">Top Hits</h2>
+                        <table class="playTable">
+                <?php 
+                                foreach ($this->arrayFinalHomeView['plays'] as $key=>$value){
+                ?>
+                                        <tr>
+                                            <td>
+                                                <h2 class=""><?php print $this->arrayFinalHomeView['plays'][$key]['vTitle']; ?></h2>
+                                                <a href="<?php print APPLICATION_BASEURL.'/profile/band/id/'.$this->arrayFinalHomeView['plays'][$key]['iMember_id'] ?>" style="text-decoration: none"><h4><?php  print $this->arrayFinalHomeView['plays'][$key]['titleBand'] ; ?></h4></a><h4><?php print$this->arrayFinalHomeView['plays'][$key]['location']; ?></h4>
+                                            </td>
+                                            <td>
+                                                <i class="icon-music icon-white"></i><div id="<?php print 'iClick_'.$value['iId']; ?>"><?php print $this->arrayFinalHomeView['plays'][$key]['iClick']; ?></div>
+                                            </td>
+                                            <td>
+                                                <img data-play="" id="playeBtn_<?php print $value['iId']; ?>" <?php print 'playe_buttom_'.$value['iId']; ?> src="<?php print APPLICATION_BASEURL .'/public/skins/frontend/default/images/img/white_arrow.png' ?>" alt="play"  onclick="play_audio(<?php print $value['iId']; ?>)"/>
+                                                <audio id="<?php print 'player_'.$value['iId']; ?>">
+                                                    <source src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/band/music/'.$value['vFile_mp3']; ?>" />
+                                                    <?php if($value['vFile_ogg']!=''){ ?>
+                                                        <source src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/band/music/'.$value['vFile_ogg']; ?>" />
+                                                    <?php } ?>
+                                                </audio>
+                                            </td>
+                                        </tr>
+                <?php
+                                }
+                ?>
+                            <tr>
+                                <td></td>
+                               
+                                <td>
+                                    <a href="<?php echo APPLICATION_BASEURL; ?>/browse" class="discoverLink">DISCOVER MORE BANDS</a>
+                                </td>
+                                 <td></td>
+                            </tr>
+                        </table>
+                    </div><!--/.span8 -->
+
+                </div><!-- /.row -->
+        
+    </div><!-- /.container -->
+    
+    <div class="container">
+        <div class="row">
+            
+            <div class="span12">
+                    <h2 class="headline homeH2header">Discover! <span>&bull;</span> Vote! <span>&bull;</span> Promote!</h2>
+            </div>
+        </div><!-- /.row -->    
+        <div class="row-fluid">
+
+            <?php
+            
+                if($this->arrayFinalHomeView['newlyBands'] != 'noBands'){
+                    foreach ($this->arrayFinalHomeView['newlyBands'] as $key1=>$value1){
+                       ?>
+                                <div class="span2">
+                                    <ul class="bandList">
+                                        <li>
+                                            <a href="<?php print APPLICATION_BASEURL.'/profile/band/id/'.$this->arrayFinalHomeView['newlyBands'][$key1]['iMember_id'] ; ?>">
+                                               <img src="<?php print APPLICATION_BASEURL .'/public/uploaded_resource/frontend/band/image/'.$this->arrayFinalHomeView['newlyBands'][$key1]['img']; ?>" alt="<?php print $this->arrayFinalHomeView['newlyBands'][$key1]['vTitle']; ?>" width="160" height="162" />
+                                            </a>
+                                        </li>
+                                        <li><?php print $this->arrayFinalHomeView['newlyBands'][$key1]['vTitle']; ?></li>
+                                        <li><?php print $this->arrayFinalHomeView['newlyBands'][$key1]['location']; ?></li>
+                                    </ul>
+                                </div>
+                  <?php
+                    }
+                    ?>
+                            <div class="span4">
+                                <ul class="bandList">
+                                    <li>
+                                        <img src="<?php print APPLICATION_BASEURL.'/library/home/assets/img/temp-ad.jpg'; ?>" alt="temp-ad" width="279" height="232" />
+                                    </li>
+                                </ul>
+                            </div>
+                       <?php 
+                }  else {
+                    ?>
+                        <div class="span4">
+                            <ul class="bandList">
+                                <li>
+                                    NO BANDS
+                                </li>
+                            </ul>
+                        </div>
+<?php                }
+            ?>
+
+
+        </div><!-- /.row-fluid -->
+        <div class="row">
+            <div class="span12 seeMoreBands">
+                <a href="<?php echo APPLICATION_BASEURL; ?>/browse" class="pillLink">SEE MORE BANDS</a>
+            </div>
+        </div><!-- /.row -->    
+        
+    </div><!-- /.container -->
+    
+</div><!-- /#bandContent -->
+
+<div id="votingContent">
+    
+    <div class="container">
+        
+        <div class="row">
+            <div class="span12">
+                <h2 class="headline homeH2header">Band Buzz</h2>
+            </div>
+        </div><!-- /.row -->
+        
+        <?php
+        
+        echo '<div class="row-fluid">';
+        
+        if($this->arrayFinalHomeView['mostVotes'][0]){
+            echo '
+                    
+                        <div class="span6">
+                            <div class="bandProfile">
+                                <a href="'.APPLICATION_BASEURL.'/profile/band/id/'.$this->arrayFinalHomeView['mostVotes'][0]['iMember_id'].'">
+                                    <img src="'.APPLICATION_BASEURL .'/public/uploaded_resource/frontend/band/image/'.$this->arrayFinalHomeView['mostVotes'][0]['img'].'" alt="temp-band-photo-1" width="160" height="162" />
+                                </a>
+                                <h2>'.$this->arrayFinalHomeView['mostVotes'][0]['vTitle'].'</h2>
+                                <h3>'.$this->arrayFinalHomeView['mostVotes'][0]['location'].'</h3>
+                              
+                                
+                ';
+            if($this->loggedUser == FALSE){
+                echo '<a id="not_login_vote_id" class="pillLink vote btn">VOTE</a>';
+            }  else {
+                echo '<a class="pillLink vote" style="">VOTE</a>';
+            }
+            echo '
+                            </div>
+                         </div>   
+                        
+                ';
+        }
+        
+        if($this->arrayFinalHomeView['mostVotes'][1]){
+            echo '
+                    
+                        <div class="span6">
+                            <div class="bandProfile">
+                                <a href="'.APPLICATION_BASEURL.'/profile/band/id/'.$this->arrayFinalHomeView['mostVotes'][1]['iMember_id'].'">
+                                    <img src="'.APPLICATION_BASEURL .'/public/uploaded_resource/frontend/band/image/'.$this->arrayFinalHomeView['mostVotes'][1]['img'].'" alt="temp-band-photo-1" width="160" height="162" />
+                                </a>
+                                <h2>'.$this->arrayFinalHomeView['mostVotes'][1]['vTitle'].'</h2>
+                                <h3>'.$this->arrayFinalHomeView['mostVotes'][1]['location'].'</h3>
+                               
+                                
+                ';
+            if($this->loggedUser == FALSE){
+                echo '<a id="not_login_vote_id" class="pillLink vote btn" style="">VOTE</a>';
+            }  else {
+                echo '<a  data-login class="pillLink vote" style="">VOTE</a>';
+            }
+            echo '
+                            </div>
+                         </div>   
+                        
+                ';
+        }
+        echo '</div>';
+        
+        echo '<div class="row-fluid">';
+        if($this->arrayFinalHomeView['mostVotes'][2]){
+            echo '
+                    
+                        <div class="span6">
+                            <div class="bandProfile">
+                                <a href="'.APPLICATION_BASEURL.'/profile/band/id/'.$this->arrayFinalHomeView['mostVotes'][2]['iMember_id'].'">
+                                    <img src="'.APPLICATION_BASEURL .'/public/uploaded_resource/frontend/band/image/'.$this->arrayFinalHomeView['mostVotes'][2]['img'].'" alt="temp-band-photo-1" width="160" height="162" />
+                                </a>
+                                <h2>'.$this->arrayFinalHomeView['mostVotes'][2]['vTitle'].'</h2>
+                                <h3>'.$this->arrayFinalHomeView['mostVotes'][2]['location'].'</h3>
+                                
+                                
+                ';
+            if($this->loggedUser == FALSE){
+                echo '<a id="not_login_vote_id" class="pillLink vote btn" style="">VOTE</a>';
+            }  else {
+                echo '<a class="pillLink vote" style="">VOTE</a>';
+            }
+            echo '
+                            </div>
+                         </div>   
+                        
+                ';
+        }
+        
+        if($this->arrayFinalHomeView['mostVotes'][3]){
+            echo '
+                    
+                        <div class="span6">
+                            <div class="bandProfile">
+                                <a href="'.APPLICATION_BASEURL.'/profile/band/id/'.$this->arrayFinalHomeView['mostVotes'][3]['iMember_id'].'">
+                                    <img src="'.APPLICATION_BASEURL .'/public/uploaded_resource/frontend/band/image/'.$this->arrayFinalHomeView['mostVotes'][3]['img'].'" alt="temp-band-photo-1" width="160" height="162" />
+                                </a>
+                                <h2>'.$this->arrayFinalHomeView['mostVotes'][3]['vTitle'].'</h2>
+                                <h3>'.$this->arrayFinalHomeView['mostVotes'][3]['location'].'</h3>
+                                
+                ';
+            if($this->loggedUser == FALSE){
+                echo '<a id="not_login_vote_id" class="pillLink vote btn" style="">VOTE</a>';
+            }  else {
+                echo '<a class="pillLink vote" style="">VOTE</a>';
+            }
+            echo '
+                            </div>
+                         </div>   
+                        
+                ';
+        }
+        echo '</div>';
+            
+        ?>
+        
+    </div><!-- /container -->
+    
+</div><!-- /#votingContent -->
+
+<div id="signupContent">
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+			<div class="specialSignUp">
+			<img src="<?php echo APPLICATION_BASEURL; ?>/library/home/assets/img/rocket-ship.png" alt="rocket-ship" width="22" height="22" />
+			<h1>Sign up now!</h1>
+			<p>For your chance to play live and win the ultimate grand prize!</p>
+			<a href="#signUpModalBox" data-toggle="modal" class="pillLink bigSignUp">SIGN UP</a>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="newsContent">
+	<div class="container">
+		<div class="row">
+			<div class="span5 news">
+			<h2>Latest News</h2>
+			<h3>Tickets On Sale Now!</h3>
+
+			<p class="date">4/25/2013</p>
+
+			<p>The time is now! Tickets for most Rockstar Energy UPROAR Festival shows are on sale NOW! Head to our tour dates page, grab a pair and then tell us what show you’re attending! Recommend on   <a href="#">Read More &gt;</a></p>
+
+			<h3>NEW MIDDLE CLASS RUT VIDEO: AUNT BETTY</h3>
+
+			<p class="date">4/27/2013</p>
+
+			<p>Check out Middle Class Rut‘s interesting new music video for their track “Aunt Betty�? up now on the UPROAR Youtube. The band’s singer-drummer Sean Stockham plays Aunt Betty while singer-guitarist Zack Lopez acts as “her�? caregiver. Together they troll the highways looking for roadkill to grill and tossed aside trinkets, but their venture into a desolate area leads them to cross a motorcycle gang who torment the pair and leave them for dead. <a href="#">Read More &gt;</a></p>
+	
+			<div class="viewAllBtn">
+				<a href="#" class="pillLink dark">VIEW ALL NEWS</a>
+			</div>
+
+			</div>
+			
+			<div class="span5 offset1 news">
+			<h2>Blog</h2>
+			<h3>Get Involved</h3>
+			<p class="date">4/25/2013</p>
+			<p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="#">Read More &gt;</a></p>
+
+			<h3>Need Move Votes? Here are some tips</h3>
+			<p class="date">4/27/2013</p>
+			<p>How to get your fans to start voting.  simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. <a href="#">Read More &gt;</a></p>
+			
+			<div class="viewAllBtn">
+				<a href="#" class="pillLink dark">VIEW ALL BLOGS</a>
+			</div>
+			
+			</div>
+		</div>
+	</div>
+</div>

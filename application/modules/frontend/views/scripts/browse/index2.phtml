@@ -1,0 +1,90 @@
+<!--<div class="span2">
+    
+</div>
+<div class="span8">
+    <div class="container-fluid">
+        <span>SORT BY:   </span>
+        <button class="btn btn-inverse" id="sort_by_name_band" data-sort="">NAME BAND <i class=""></i> </button>
+        <button class="btn btn-inverse" id="sort_by_most_vote" data-sort="">MOST VOTE <i class=""></i></button>
+        <button class="btn btn-inverse" id="sort_by_most_fans" data-sort="">MOST FANS <i class=""></i></button>
+        <button class="btn btn-inverse" id="sort_by_top_songs" data-sort="">TOP SONGS <i class=""></i></button>
+        <a  id="search-data-btn" href="#myModal" role="button" class="btn btn-inverse pull-right" data-toggle="modal">SEARCH</a>
+        <button class="btn btn-primary pull-right" id="reset_search_data" data-search="" style="display: none">RESET SEARCH</button>
+ 
+         Modal 
+        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h5 id="myModalLabel">Search Band Name</h5>
+            </div>
+            <div class="modal-body">
+                <form id="form-send-data" action="<?php // echo APPLICATION_BASEURL; ?>/browse">
+                    <input type="text" name="search-data" id="search-data" placeholder="Band Name..."  style="width: 70%">
+                    <input type="button" value="search" name="search-band-name" id="search-band-name" class="btn btn-success" style="margin-top:-10px; width: 25%" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                <button class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        </div>
+        
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>band name</th>
+                    <th>fans</th>
+                    <th>vote</th>
+                    <th>plays</th>
+                    <th>profile</th>
+                </tr>
+            </thead>
+            <tbody id ="tBody_table_td"></tbody>
+        </table>
+    
+</div>
+<div class="span2">
+    
+</div>-->
+
+
+
+
+ <div class="space"></div>
+ <div id="bandContent">
+     <div class="container">
+         <div class="signupBtns"><p style="float:left; margin:12px 30px 0 -25px; color:#FFF;">SORT BY:</p>
+            <a href="" class="pillLink signup" style="float:left;" id="sort_by_most_vote" data-sort="" >MOST VOTES</a>
+            <a href="" class="pillLink signin" style="float:left;" id="sort_by_top_songs" data-sort="" >TOP SONGS</a>
+            <a href="" class="pillLink signin" style="float:left;" id="sort_by_most_fans" data-sort="">MOST FANS</a>
+            <a id="search-data-btn" href="#myModal" role="button" class="pillLink signin" data-toggle="modal">SEARCH</a>
+            <button class="btn btn-primary pull-right" id="reset_search_data" data-search="" style="display: none">RESET SEARCH</button>
+	  </div>
+         <div style="height:15px;"></div>
+         <div class="row">
+             <table class="playTable">
+                 
+             </table>
+         </div>
+     </div>
+ </div>
+
+  
+        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h5 id="myModalLabel">Search Band Name</h5>
+            </div>
+            <div class="modal-body">
+                <form id="form-send-data" action="<?php  echo APPLICATION_BASEURL; ?>/browse">
+                    <input type="text" name="search-data" id="search-data" placeholder="Band Name..."  style="width: 70%">
+                    <input type="button" value="search" name="search-band-name" id="search-band-name" class="btn btn-success" style="margin-top:-10px; width: 25%" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                <button class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        

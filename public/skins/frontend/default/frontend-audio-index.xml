@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin>
+    <stylesheets>
+        <stylesheet>../../../../library/bootstrap/css/bootstrap.min.css</stylesheet>
+        <!--<stylesheet>../../../../library/Flat-UI-master/css/flat-ui.css</stylesheet>-->
+        <stylesheet>../../../../library/home/assets/css/house.css</stylesheet>
+        <stylesheet>../../../../library/bootstrap/css/bootstrap-responsive.min.css</stylesheet>
+        
+
+        
+        <!--uplodyFy-->
+        <stylesheet>../../../../library/plugin/uploadify/uploadify.css</stylesheet>
+        
+        <!--sortable-->
+        <javascript>../../../../library/plugin/jquery-ui-1.10.3.custom/development-bundle/themes/base/jquery.ui.all.css</javascript>
+        
+        <!--jplayer-->
+        <!--<stylesheet>../../../../library/plugin/jQuery.jPlayer.2.3.0.demos/skin/blue.monday/jplayer.blue.monday.css</stylesheet>-->
+        
+        <!--htmleditor-->
+        <!--<stylesheet>../../../../library/plugin/bootstrap-editable-1.4.4/inputs-ext/wysihtml5/bootstrap-wysihtml5-0.0.2/bootstrap-wysihtml5-0.0.2.css</stylesheet>-->
+        <!--<stylesheet>../../../../library/plugin/bootstrap-editable-1.4.4/inputs-ext/wysihtml5/bootstrap-wysihtml5-0.0.2/wysiwyg-color.css</stylesheet>-->
+        
+        <!--date picker-->
+        <!--<stylesheet>../../../../library/plugin/bootstrap-editable-1.4.4/inputs-ext/bootstrap-datetimepicker/css/datetimepicker.css</stylesheet>-->
+        <!--<stylesheet>../../../../library/plugin/bootstrap-editable-1.4.4/inputs-ext/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css</stylesheet>-->
+
+        <stylesheet>css/app.css</stylesheet>
+    </stylesheets>
+
+    <javascripts>
+        <javascript>../../../../library/jQuery/jquery-1.9.0.min.js</javascript>
+        <javascript>../../../../library/home/assets/js/jquery.backstretch.min.js</javascript>
+        <javascript>../../../../library/bootstrap/js/bootstrap.min.js</javascript>
+        
+        <!--uplodiFy-->
+        <javascript>../../../../library/plugin/uploadify/jquery.uploadify.min.js</javascript>
+        
+        <!--tree-->
+        <!--<javascript>../../../../library/plugin/jstree-v.pre1.0/jquery.jstree.js</javascript>-->
+        <!--<javascript>../../../../library/plugin/jstree-v.pre1.0/_lib/jquery.cookie.js</javascript>-->
+        <!--<javascript>../../../../library/plugin/jstree-v.pre1.0/_lib/jquery.hotkeys.js</javascript>-->
+        <!--<javascript>../../../../library/plugin/jstree-v.pre1.0/_docs/syntax/!script.js</javascript>-->
+        
+        <!--jplayer-->
+        <!--<javascript>../../../../library/plugin/jQuery.jPlayer.2.3.0.demos/js/jquery.jplayer.min.js</javascript>-->
+        <!--<javascript>../../../../library/plugin/jQuery.jPlayer.2.3.0.demos/js/jplayer.playlist.min.js</javascript>-->
+        <!--<javascript>../../../../library/plugin/jQuery.jPlayer.2.3.0.demos/js/jquery.transform2d.js</javascript>-->
+        <!--<javascript>../../../../library/plugin/jQuery.jPlayer.2.3.0.demos/js/jquery.grab.js</javascript>-->
+        <!--<javascript>../../../../library/plugin/jQuery.jPlayer.2.3.0.demos/js/mod.csstransforms.min.js</javascript>-->
+        
+        <!--html editor-->
+        <!--<javascript>../../../../library/plugin/bootstrap-editable-1.4.4/inputs-ext/wysihtml5/bootstrap-wysihtml5-0.0.2/wysihtml5-0.3.0.min.js</javascript>-->
+        <!--<javascript>../../../../library/plugin/bootstrap-editable-1.4.4/inputs-ext/wysihtml5/bootstrap-wysihtml5-0.0.2/bootstrap-wysihtml5-0.0.2.min.js</javascript>-->
+
+        <!--date piker-->
+        <!--<javascript>../../../../library/plugin/bootstrap-editable-1.4.4/inputs-ext/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js</javascript>-->
+        <!--<javascript>../../../../library/plugin/bootstrap-editable-1.4.4/inputs-ext/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js</javascript>-->
+        
+        <!--sortable-->
+        <javascript>../../../../library/plugin/jquery-ui-1.10.3.custom/development-bundle/ui/jquery.ui.core.js</javascript>
+        <javascript>../../../../library/plugin/jquery-ui-1.10.3.custom/development-bundle/ui/jquery.ui.widget.js</javascript>
+        <javascript>../../../../library/plugin/jquery-ui-1.10.3.custom/development-bundle/ui/jquery.ui.mouse.js</javascript>
+        <javascript>../../../../library/plugin/jquery-ui-1.10.3.custom/development-bundle/ui/jquery.ui.sortable.js</javascript>
+        
+        <javascript>../../../../library/plugin/jquery-form/jquery.form.js</javascript>
+        <javascript>js/app.js</javascript>
+    </javascripts>
+
+</skin>

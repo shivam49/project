@@ -1,0 +1,65 @@
+<script>$.fn.editable.defaults.mode = 'inline';</script>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span5 offset3">
+            <div class="row">
+                <button id="btn-add-id" class="btn btn-primary"><span class="icon-plus icon-white"></span> ADD</button>
+                <button id="btn-search" class="btn btn-primary pull-right"><span class="icon-search icon-white"></span> SEARCH</button>
+                <button id="btn-reset-search" class="btn btn-block hide pull-right span4"><span class="icon-refresh"></span> RESET SEARCH</button>
+            </div>
+            <div class="row" id="div-form-id" style="margin-top: 20px;" hidden="hidden">
+                <form class="form-inline" method="post" action="<?php echo APPLICATION_BASEURL; ?>/backend/genres/save-genres" name="form-save" id="form-save-id">
+                    <input class="span8" id="name-genres-id" type="text" name="vTitle" placeholder="Title" required />
+                    <button style="width: 87px;" id="submit-save-id" class="btn btn-success" name="submit" type="submit">SUBMIT</button>
+                    <button id="reset-form-id" class="btn btn-danger" name="reset" type="reset">CLOSE</button>
+                </form>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <td>Title</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <p class="demo demo2" hidden="hidden"></p>
+                    <p class="demo demo3" hidden="hidden"></p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="modal-delete-genres-id" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="deleteStateLabel">Warning</h3>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure to delete this Genres?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">No</button>
+                <button class="btn btn-primary" id="delete-genres-yes-id">Yes</button>
+            </div>
+        </div>
+        
+        <div id="modal-search-id" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h5 id="myModalLabel">Search Title</h5>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline" method="post" action="<?php echo APPLICATION_BASEURL; ?>/backend/genres/load-genres" name="form-save" id="form-search-id">
+                    <input class="span9" id="name-genres-search-id" type="text" name="vTitle" placeholder="Title" />
+                    <button style="width: 130px;" id="submit-search-id" class="btn btn-success" name="submit" type="submit">SEARCH</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
